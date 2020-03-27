@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Footer.css';
-import {getColor} from "../../Utils/Colors";
+import {getColor} from "../../Colors";
 
 class Footer extends Component {
     render() {
