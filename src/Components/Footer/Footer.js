@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Footer.css';
-import {getColor} from "../../Utils/Colors";
-import { Text } from 'react-native';
+import {getColor} from "../../Colors";
 
 class Footer extends Component {
     render() {
