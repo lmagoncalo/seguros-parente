@@ -43,9 +43,9 @@ export function getClasses() {
         {
             id: 5,
             name: 'monovolumes',
-            seats: 'audi',
+            seats: 5,
             space: 4,
-            air_conditioning : 'A/C autm',
+            air_conditioning : 'A/C automático',
             gear: 'cx manual',
             doors: 7,
             fuel: 'diesel'
@@ -53,17 +53,7 @@ export function getClasses() {
     ]
 }
 
-export function getPadding() {
-    return '20%';
-}
 
-export function getMenuTop() {
-    return '60px';
-}
-
-export function getTitleSize() {
-    return '60px';
-}
 
 export function createEmail(email, name, car_type, start_date, end_date, message) {
     let string = "";
@@ -96,4 +86,20 @@ export function createEmail(email, name, car_type, start_date, end_date, message
 
     return string;
 
+}
+
+export function getPadding() {
+    return '25%';
+}
+
+export function getMenuTop() {
+    return '60px';
+}
+
+export function getSubMenuTop() {
+    return '30px';
+}
+
+export function getTitleSize() {
+    return '64px';
 }

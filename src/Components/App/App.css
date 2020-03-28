@@ -26,6 +26,12 @@
     url('../../fonts/AngleciaProText-Medium.otf') format('opentype')
 }
 
+@font-face {
+    font-family: 'Text_Regular';
+    src: local('Text_Regular'),
+    url('../../fonts/AngleciaProText-Regular.otf') format('opentype')
+}
+
 
 body {
     font-family: 'Text_Medium',serif;
