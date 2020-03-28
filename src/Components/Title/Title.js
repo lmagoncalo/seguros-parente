@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import {Container, Row, Col} from "react-bootstrap";
-import {getColor} from "../../Colors";
+import {Col} from "react-bootstrap";
 import {getPadding, getTitleSize} from "../../Utils";
 
 class Title extends Component{
@@ -13,12 +12,12 @@ class Title extends Component{
             fontSize: getTitleSize(),
             paddingTop: '18px',
             paddingBottom: '18px',
-        }
+        };
         const title_title={
             paddingLeft: getPadding(),
             paddingRight: getPadding(),
             width: '100%'
-        }
+        };
 
         return (
             <div style={menu_title} fluid >
