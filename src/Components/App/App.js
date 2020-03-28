@@ -15,7 +15,6 @@ class App extends Component{
     render() {
         return (
             <div>
-
                 <Navbar collapseOnSelect expand="lg" bg="light" variant="light" sticky="top">
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
