@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Image, Row} from "react-bootstrap";
+import {Image} from "react-bootstrap";
 import car from './car.jpg'
 
 class Class extends Component {
