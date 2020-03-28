@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Title.css';
 import {Container, Row, Col} from "react-bootstrap";
 
 class Title extends Component{

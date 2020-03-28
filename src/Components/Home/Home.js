@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Home.css';
 import {Container, Row} from "react-bootstrap";
 
 class Home extends Component {

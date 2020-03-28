@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Class.css';
 import {Image} from "react-bootstrap";
 import car from './car.jpg'
 

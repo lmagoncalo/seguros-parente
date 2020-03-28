@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Simulation.css';
 import "react-datepicker/dist/react-datepicker.css";
 import Title from "../Title/Title";
 import {Form, Button, Col, Alert} from "react-bootstrap";
