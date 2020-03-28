@@ -6,7 +6,7 @@ import {getPadding, getSubMenuTop} from "../../Utils";
 class Class extends Component {
     constructor(props) {
         super(props);
-        this.state = { class: props.class };
+        this.state = { class: props.class, orientation: props.orientation, color: props.color };
     }
 
     render() {
@@ -21,7 +21,15 @@ class Class extends Component {
             fontSize: "34px",
             letterSpacing: "2px",
             marginTop: getSubMenuTop(),
-            marginBottom: getSubMenuTop()
+            marginBottom: getSubMenuTop(),
+            float:this.state.orientation
+        };
+
+        const line_class={
+            margin: "auto",
+            marginTop: "8px",
+            //float: "left",
+            border: "1.2px solid " + this.state.color
         };
 
         const info_class={
@@ -29,20 +37,18 @@ class Class extends Component {
             paddingLeft:0,
             marginTop:0,
             paddingBottom:0,
-            margin:'0'
+            margin:'0',
+            textAlign: this.state.orientation,
+            position: "relative"
         };
 
-
-    const info_text_class={
+        const info_text_class={
             display:"inline-block",
-            marginRight:"10x"
+            marginRight:"10x",
+            marginBottom: 0,
+            fontSize: "25px",
+            fontFamily: "Text_Regular"
         };
-
-    const li_info_class={
-
-        
-    };
-
 
         const icon_class={
             width:"20px",
@@ -57,29 +63,35 @@ class Class extends Component {
 
         return (
             <div style={menu_class}>
-                    <h3 style={title_class}>{this.state.class.name}</h3>
+                    <div>
+                        <h3 style={title_class}>{this.state.class.name}
+                            <hr style={line_class} />
+                        </h3>
+                    </div>
+
+
                      <ul style={info_class}>
-                         <li style={li_info_class}>
+                         <li>
                             <Image style={icon_class} src={car} />
                              <p style={info_text_class}>{this.state.class.seats} lugares</p>
                          </li>
-                         <li style={li_info_class}>
+                         <li>
                              <Image style={icon_class} src={car} />
                              <p style={info_text_class}>{this.state.class.space} malas</p>
                          </li>
-                         <li style={li_info_class}>
+                         <li>
                              <Image style={icon_class} src={car} />
                              <p style={info_text_class}>{this.state.class.air_conditioning}</p>
                          </li>
-                         <li style={li_info_class}>
+                         <li>
                              <Image style={icon_class} src={car} />
                              <p style={info_text_class}>{this.state.class.gear}</p>
                          </li>
-                         <li style={li_info_class}>
+                         <li>
                              <Image style={icon_class} src={car} />
                              <p style={info_text_class}>{this.state.class.doors} portas</p>
                          </li>
-                         <li style={li_info_class}>
+                         <li>
                              <Image style={icon_class} src={car} />
                              <p style={info_text_class}>{this.state.class.fuel}</p>
                          </li>
