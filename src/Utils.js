@@ -53,7 +53,6 @@ export function getClasses() {
     ]
 }
 
-<<<<<<< HEAD
 export function getPadding() {
     return '20%';
 }
@@ -66,7 +65,6 @@ export function getTitleSize() {
     return '60px';
 }
 
-=======
 export function createEmail(email, name, car_type, start_date, end_date, message) {
     let string = "";
 
@@ -99,4 +97,3 @@ export function createEmail(email, name, car_type, start_date, end_date, message
     return string;
 
 }
->>>>>>> bf6a8eb242f529717271d122f643e42b5e865d47
