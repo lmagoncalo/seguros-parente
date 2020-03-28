@@ -1,16 +1,31 @@
 import React, { Component } from 'react';
-import './Title.css';
 import {Container, Row, Col} from "react-bootstrap";
+import {getColor} from "../../Colors";
+import {getPadding, getTitleSize} from "../../Utils";
 
 class Title extends Component{
 
     render() {
+        const menu_title = {
+            background: "black",
+            color: "white",
+            fontFamily: 'Display_Medium',
+            fontSize: getTitleSize(),
+            paddingTop: '18px',
+            paddingBottom: '18px',
+        }
+        const title_title={
+            paddingLeft: getPadding(),
+            paddingRight: getPadding(),
+            width: '100%'
+        }
+
         return (
-            <Container style={{backgroundColor: "black", color: "white"}} fluid >
-                <Row>
-                    <Col>· {this.props.name} ·</Col>
-                </Row>
-            </Container>
+            <div style={menu_title} fluid >
+                <div>
+                    <Col style={title_title}>· {this.props.name} ·</Col>
+                </div>
+            </div>
         );
     }
 }

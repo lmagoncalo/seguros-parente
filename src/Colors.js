@@ -5,3 +5,8 @@ export function getColor(){
 
     return colorPrimary
 }
+
+
+export function getTextColor(){
+    return "#000000"
+}

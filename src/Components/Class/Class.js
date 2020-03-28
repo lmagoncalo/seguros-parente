@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import './Class.css';
-import {Image} from "react-bootstrap";
+import {Image, Row} from "react-bootstrap";
 import car from './car.jpg'
 
 class Class extends Component {
@@ -12,9 +11,9 @@ class Class extends Component {
     render() {
         return (
             <div>
-                <h3>{this.state.class.name}</h3>
-                <Image src={car} rounded />
-                <Image src={car} rounded />
+                    <h3>{this.state.class.name}</h3>
+                    <Image src={car} rounded />
+                    <Image src={car} rounded />
             </div>
         );
     }

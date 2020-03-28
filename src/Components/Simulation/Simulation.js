@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Simulation.css';
 import Title from "../Title/Title";
 import {Form, Button, Col} from "react-bootstrap";
 

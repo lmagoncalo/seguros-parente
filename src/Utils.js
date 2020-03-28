@@ -52,3 +52,16 @@ export function getClasses() {
         },
     ]
 }
+
+export function getPadding() {
+    return '20%';
+}
+
+export function getMenuTop() {
+    return '60px';
+}
+
+export function getTitleSize() {
+    return '60px';
+}
+

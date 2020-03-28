@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Classes.css';
 import Title from "../Title/Title";
 import {getClasses} from "../../Utils";
 import Class from '../Class/Class'
