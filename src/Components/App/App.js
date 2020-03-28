@@ -6,6 +6,11 @@ import Simulation from "../Simulation/Simulation";
 import Footer from "../Footer/Footer";
 import {Nav, Navbar} from "react-bootstrap";
 
+import '../../fonts/AngleciaProDisplay-BoldItalic.otf'
+import '../../fonts/AngleciaProDisplay-Medium.otf'
+import '../../fonts/AngleciaProText-Bold.otf'
+import '../../fonts/AngleciaProText-Medium.otf'
+
 class App extends Component{
     render() {
         return (

@@ -1,3 +1,27 @@
+
+
 .Nav.Link{
     font-variant: small-caps;
+}
+
+@font-face {
+    font-family: 'Display_Bold_Italic';
+    src: local('../../fonts/AngleciaProDisplay-BoldItalic.otf'), url('../../fonts/AngleciaProDisplay-BoldItalic.otf') format('otf');
+}
+@font-face {
+    font-family: 'Display_Medium';
+    src: local('../../fonts/AngleciaProDisplay-Medium.otf'), url('../../fonts/AngleciaProDisplay-Medium.otf') format('otf');
+}
+@font-face {
+    font-family: 'Text_Bold';
+    src: local('../../fonts/AngleciaProText-Bold.otf'), url('../../fonts/AngleciaProText-Bold.otf') format('otf');
+}
+@font-face {
+    font-family: 'Text_Medium';
+    src: local('../../fonts/AngleciaProText-Medium.otf'), url('../../fonts/AngleciaProText-Medium.otf') format('otf');
+}
+
+.body {
+    font-family: 'Text_Bold', serif;
+    font-size: 20px;
 }
