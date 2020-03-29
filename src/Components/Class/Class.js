@@ -42,20 +42,6 @@ class Class extends Component {
             position: "relative"
         };
 
-<<<<<<< HEAD
-
-        const info_text_class={
-                display:"inline-block",
-                marginRight:"10x"
-            };
-
-        const li_info_class={
-
-
-        };
-
-
-=======
         const info_text_class={
             display:"inline-block",
             marginRight:"10x",
@@ -64,7 +50,6 @@ class Class extends Component {
             fontFamily: "Text_Regular"
         };
 
->>>>>>> 9e2201c0577ab59404ab41d9330576c27e75dd2b
         const icon_class={
             width:"20px",
             display:"inline-block",
@@ -75,25 +60,14 @@ class Class extends Component {
             width:"200px"
         };
 
-        const line_class={
-            margin: "auto 10px",
-            border: "1.5px solid rgb(150, 150, 150)"
-        };
 
         return (
             <div style={menu_class}>
-<<<<<<< HEAD
-                    <h3 style={title_class}>{this.state.class.name}</h3>
-                    <hr style={line_class} />
-=======
                     <div>
                         <h3 style={title_class}>{this.state.class.name}
                             <hr style={line_class} />
                         </h3>
                     </div>
-
-
->>>>>>> 9e2201c0577ab59404ab41d9330576c27e75dd2b
                      <ul style={info_class}>
                          <li>
                             <Image style={icon_class} src={car} />
