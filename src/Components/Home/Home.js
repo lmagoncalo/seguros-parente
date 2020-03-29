@@ -15,16 +15,19 @@ class Home extends Component {
         const title_home={
             fontFamily: 'Display_Medium',
             fontSize: getTitleSize(),
-            marginBottom: '30px'
-        }
+            marginTop: '30px',
+            marginBottom: '50px'
+        };
 
         const italic_home={
             fontFamily: 'Display_Bold_Italic'
-        }
+        };
 
         const text_home={
-            fontFamily: 'Text_Medium'
-        }
+            fontFamily: 'Text_Regular',
+            fontSize: '27px',
+            lineHeight: '32px'
+        };
 
         return(
             <div style={menu_home}>

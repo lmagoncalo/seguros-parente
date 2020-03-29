@@ -10,8 +10,8 @@ class Title extends Component{
             color: "white",
             fontFamily: 'Display_Medium',
             fontSize: getTitleSize(),
-            paddingTop: '18px',
-            paddingBottom: '18px',
+            paddingTop: '35px',
+            paddingBottom: '35px',
         };
         const title_title={
             paddingLeft: getPadding(),

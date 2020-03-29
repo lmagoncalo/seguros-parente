@@ -11,6 +11,7 @@ class Classes extends Component {
         // Cria uma apresentação para cada classe
         let background_color;
         let color;
+        let orientation;
         let flag = true;
         const classes = getClasses();
 
@@ -18,14 +19,16 @@ class Classes extends Component {
             if(flag){
                 background_color = getColor();
                 color = 'white';
+                orientation = 'right';
             } else{
                 background_color = 'white';
                 color = 'black';
+                orientation = 'left';
             }
             flag = !flag;
 
             return (
-                <ListGroup.Item style={{backgroundColor:background_color, color:color}} key={"class_list_" + c.id}> <Class className="col-lg" key={"class_" + c.id} class={c} /> </ListGroup.Item>
+                <ListGroup.Item style={{backgroundColor:background_color, color:color}} key={"class_list_" + c.id}> <Class orientation={orientation} className="col-lg" key={"class_" + c.id} class={c} /> </ListGroup.Item>
             );
         });
 

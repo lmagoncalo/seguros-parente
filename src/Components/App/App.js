@@ -16,16 +16,17 @@ class App extends Component{
         const nav_bar={
             fontVariant: "small-caps",
             color: getTextColor(),
-            //fontFamily: "Text-Medium",
-
-        }
+            fontFamily: "Text_Bold",
+            fontSize: "14px",
+            letterSpacing: "1.5px",
+            marginLeft:"6px"
+        };
 
         const menu_app = {
-            fontFamily: 'Medium',
             fontSize: "15px",
-            marginTop: "30px",
+            marginTop: "20px",
             paddingRight: getPadding(),
-        }
+        };
 
         return (
             <div>
