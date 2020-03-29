@@ -5,7 +5,7 @@ import Classes from "../Classes/Classes";
 import Simulation from "../Simulation/Simulation";
 import Footer from "../Footer/Footer";
 import {Nav, Navbar} from "react-bootstrap";
-import {getTextColor} from "../../Colors";
+import {getColor, getTextColor} from "../../Colors";
 import {getMenuTop, getPadding, getTitleSize} from "../../Utils";
 
 
@@ -13,6 +13,12 @@ import {getMenuTop, getPadding, getTitleSize} from "../../Utils";
 
 class App extends Component{
     render() {
+        const line_class={
+            margin: "auto",
+            marginTop: "6px",
+            border: "1.2px solid " + getColor()
+        };
+
         const nav_bar={
             fontVariant: "small-caps",
             color: getTextColor(),
@@ -34,7 +40,7 @@ class App extends Component{
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
                         <Nav>
-                            <Nav.Link style={nav_bar} href="#home">SOBRE NÓS</Nav.Link>
+                            <Nav.Link style={nav_bar} href="#home">SOBRE NÓS<hr style={line_class} /></Nav.Link>
                             <Nav.Link style={nav_bar} href="#classes">FROTA</Nav.Link>
                             <Nav.Link style={nav_bar} href="#simulation">PEDIR SIMULAÇÃO</Nav.Link>
                         </Nav>
