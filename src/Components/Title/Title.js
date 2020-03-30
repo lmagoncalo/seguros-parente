@@ -5,6 +5,12 @@ import {getPadding, getTitleSize} from "../../Utils";
 class Title extends Component{
 
     render() {
+        const retWhite_title={
+            background: "white",
+            height:"8px",
+            width:"100%"
+        };
+
         const menu_title = {
             background: "black",
             color: "white",
@@ -20,8 +26,9 @@ class Title extends Component{
         };
 
         return (
-            <div style={menu_title} fluid >
-                <div>
+            <div>
+                <div style={retWhite_title} />
+                <div style={menu_title}>
                     <Col style={title_title}>· {this.props.name} ·</Col>
                 </div>
             </div>

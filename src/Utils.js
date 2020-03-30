@@ -53,8 +53,6 @@ export function getClasses() {
     ]
 }
 
-
-
 export function createEmail(email, name, car_type, start_date, end_date, message) {
     let string = "";
 
@@ -97,9 +95,21 @@ export function getMenuTop() {
 }
 
 export function getSubMenuTop() {
-    return '30px';
+    return '50px';
 }
 
 export function getTitleSize() {
     return '64px';
 }
+
+export function getIcons(color){
+    let size=6;
+    let icons_img=[size];
+    for (let i=0;i<size;i++){
+       icons_img[i]=require('./icons/'+color+'/'+i+'.png');
+    }
+    return icons_img;
+}
+//export const blackIcons = [require('./icons/black/1.png'),{src: require('./icons/black/2.png') },{src: require('./icons/black/3.png') }, { src: require('./icons/black/4.png')},{ src: require('./icons/black/5.png') }, { src: require('./icons/black/6.png') }];
+
+//export const whiteIcons = [{src: require('./icons/white/1.png')},{src: require('./icons/white/2.png') },{src: require('./icons/white/3.png') }, { src: require('./icons/white/4.png')},{ src: require('./icons/white/5.png') }, { src: require('./icons/white/6.png' )}];

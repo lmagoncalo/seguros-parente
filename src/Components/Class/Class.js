@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import {Image} from "react-bootstrap";
-import car from './car.jpg'
-import {getPadding, getSubMenuTop} from "../../Utils";
+import cars from './cars.png'
+import {getIcons, getPadding, getSubMenuTop} from "../../Utils";
 
 class Class extends Component {
     constructor(props) {
         super(props);
-        this.state = { class: props.class, orientation: props.orientation, color: props.color };
+        this.state = { class: props.class, title_orientation: props.title_orientation, info_orientation: props.info_orientation, color: props.color};
     }
 
     render() {
@@ -15,21 +15,26 @@ class Class extends Component {
             paddingRight:getPadding()
         };
 
-        const title_class={
+        const divSubTitle_class={
+            width:"100%",
+            height:"auto",
+            display:"inline-block",
+        };
+
+        const subTitle_class={
             fontFamily:'Text_Bold',
             fontVariant: "small-caps",
-            fontSize: "34px",
+            fontSize: "35px",
             letterSpacing: "2px",
             marginTop: getSubMenuTop(),
             marginBottom: getSubMenuTop(),
-            float:this.state.orientation
+            float:this.state.title_orientation
         };
 
         const line_class={
             margin: "auto",
             marginTop: "8px",
-            //float: "left",
-            border: "1.2px solid " + this.state.color
+            border: "1.5px solid " + this.state.color
         };
 
         const info_class={
@@ -38,8 +43,11 @@ class Class extends Component {
             marginTop:0,
             paddingBottom:0,
             margin:'0',
-            textAlign: this.state.orientation,
-            position: "relative"
+            //textAlign: this.state.info_orientation,
+            position: "relative",
+           // float: this.state.info_orientation
+            float: "left",
+            width:"40%",
         };
 
         const info_text_class={
@@ -51,51 +59,63 @@ class Class extends Component {
         };
 
         const icon_class={
-            width:"20px",
+            width:"22px",
             display:"inline-block",
-            marginRight:"10px"
+            marginRight:"10px",
+           // backgroundColor:"rgba(255,0,0,1)",
+            paddingTop:"0",
+            paddingBottom: "10px"
         };
 
         const image_class={
-            width:"200px"
+            width:"100%",
         };
 
+        const divImage_class={
+           // float:this.state.title_orientation
+            float:"right",
+            width:"60%",
+            marginBottom:getSubMenuTop()
+        };
+
+        let icons = getIcons(this.state.color);
 
         return (
             <div style={menu_class}>
-                    <div>
-                        <h3 style={title_class}>{this.state.class.name}
+                    <div style={divSubTitle_class}>
+                        <h3 style={subTitle_class}>{this.state.class.name}
                             <hr style={line_class} />
                         </h3>
                     </div>
                      <ul style={info_class}>
                          <li>
-                            <Image style={icon_class} src={car} />
+                            <Image style={icon_class} src={icons[0]} />
                              <p style={info_text_class}>{this.state.class.seats} lugares</p>
                          </li>
                          <li>
-                             <Image style={icon_class} src={car} />
+                             <Image style={icon_class} src={icons[1]} />
                              <p style={info_text_class}>{this.state.class.space} malas</p>
                          </li>
                          <li>
-                             <Image style={icon_class} src={car} />
+                             <Image style={icon_class} src={icons[2]} />
                              <p style={info_text_class}>{this.state.class.air_conditioning}</p>
                          </li>
                          <li>
-                             <Image style={icon_class} src={car} />
+                             <Image style={icon_class} src={icons[3]} />
                              <p style={info_text_class}>{this.state.class.gear}</p>
                          </li>
                          <li>
-                             <Image style={icon_class} src={car} />
+                             <Image style={icon_class}src={icons[4]} />
                              <p style={info_text_class}>{this.state.class.doors} portas</p>
                          </li>
                          <li>
-                             <Image style={icon_class} src={car} />
+                             <Image style={icon_class} src={icons[5]} />
                              <p style={info_text_class}>{this.state.class.fuel}</p>
                          </li>
                      </ul>
-                    <Image style={image_class} src={car} />
-                    <Image style={image_class} src={car} />
+                <div style={divImage_class}>
+                    <Image style={image_class} src={cars} />
+                </div>
             </div>
         );
     }

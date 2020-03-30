@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import {getColor} from "../../Colors";
+import {getPrimaryColorFinal} from "../../Colors";
 
 class Footer extends Component {
     render() {
 
         const menuFooter = {
             height: '200px',
-            background: getColor(),
+            background: getPrimaryColorFinal(),
             textAlign: 'center',
             display: 'block',
             color:'white',
