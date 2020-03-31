@@ -37,3 +37,7 @@ body {
     font-family: 'Text_Medium',serif;
     font-size: 20px;
 }
+
+.list-group-item{
+    padding:0;
+}

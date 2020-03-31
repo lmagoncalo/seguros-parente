@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Image} from "react-bootstrap";
 import cars from './cars.png'
 import {getIcons, getPadding, getSubMenuTop} from "../../Utils";
+import {getPrimaryColor, getPrimaryColorFinal} from "../../Colors";
 
 class Class extends Component {
     constructor(props) {
@@ -10,6 +11,24 @@ class Class extends Component {
     }
 
     render() {
+
+        const total_class={
+            padding:'0',
+            margin:'0',
+        };
+
+         const menu_rect={
+             background: "black",
+             height:"3px",
+             width:"100%",
+             padding:"0",
+             margin:"0",
+             position: "absolute",
+             //backgroundImage: "linear-gradient("+getPrimaryColorFinal()+ ", rgba("+getPrimaryColor()+",0.6),rgba("+getPrimaryColor()+",0.3), rgba("+getPrimaryColor()+",0.1), rgba("+getPrimaryColor()+",0) )",
+
+         };
+
+
         const menu_class={
             paddingLeft:getPadding(),
             paddingRight:getPadding()
@@ -48,13 +67,15 @@ class Class extends Component {
            // float: this.state.info_orientation
             float: "left",
             width:"40%",
+           // backgroundColor:"rgba(0,255,0,0.5)"
+
         };
 
         const info_text_class={
             display:"inline-block",
             marginRight:"10x",
             marginBottom: 0,
-            fontSize: "25px",
+            fontSize: "23px",
             fontFamily: "Text_Regular"
         };
 
@@ -75,17 +96,22 @@ class Class extends Component {
            // float:this.state.title_orientation
             float:"right",
             width:"60%",
-            marginBottom:getSubMenuTop()
+            marginBottom:getSubMenuTop(),
+            //backgroundColor:"rgba(255,0,0,0.5)"
         };
 
         let icons = getIcons(this.state.color);
 
         return (
-            <div style={menu_class}>
+            <div style={total_class}>
+                <div style={menu_rect}/>
+                <div style={menu_class}>
+
                     <div style={divSubTitle_class}>
                         <h3 style={subTitle_class}>{this.state.class.name}
                             <hr style={line_class} />
                         </h3>
+
                     </div>
                      <ul style={info_class}>
                          <li>
@@ -114,8 +140,9 @@ class Class extends Component {
                          </li>
                      </ul>
                 <div style={divImage_class}>
-                    <Image style={image_class} src={cars} />
+                    <Image style={image_class} src={this.state.class.src} />
                 </div>
+            </div>
             </div>
         );
     }

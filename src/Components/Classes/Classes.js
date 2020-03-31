@@ -39,7 +39,7 @@ class Classes extends Component {
         });
 
         return (
-            <div>
+            <div >
                 <Title name={"A nossa frota"}/>
                 <ListGroup variant="flush">
                     {classes_comp}

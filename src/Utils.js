@@ -8,7 +8,8 @@ export function getClasses() {
             air_conditioning : 'A/C manual',
             gear: 'cx manual',
             doors: 5,
-            fuel: 'gasolina'
+            fuel: 'gasolina',
+            src:require('./cars/pequenos_utilitarios.png')
         },
         {
             id: 2,
@@ -18,7 +19,8 @@ export function getClasses() {
             air_conditioning : 'A/C manual',
             gear: 'cx manual',
             doors: 5,
-            fuel: 'gasolina'
+            fuel: 'gasolina',
+            src:require('./cars/utilitarios.png')
         },
         {
             id: 3,
@@ -26,9 +28,10 @@ export function getClasses() {
             seats: 5,
             space: 2,
             air_conditioning : 'A/C manual',
-            gear: 'cx manual',
+            gear: 'cx manual/ automático',
             doors: 5,
-            fuel: 'diesel'
+            fuel: 'diesel',
+            src:require('./cars/utilitarios_economicos.png')
         },
         {
             id: 4,
@@ -38,7 +41,8 @@ export function getClasses() {
             air_conditioning : 'A/C manual',
             gear: 'cx manual',
             doors: 5,
-            fuel: 'diesel'
+            fuel: 'diesel',
+            src:require('./cars/carrinhas.png')
         },
         {
             id: 5,
@@ -48,7 +52,8 @@ export function getClasses() {
             air_conditioning : 'A/C automático',
             gear: 'cx manual',
             doors: 7,
-            fuel: 'diesel'
+            fuel: 'diesel',
+            src:require('./cars/monovolumes.png')
         },
     ]
 }
