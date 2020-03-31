@@ -9,8 +9,6 @@ import {getTextColor,getPrimaryColor,getPrimaryColorFinal,getSecundaryColor} fro
 import {getPadding} from "../../Utils";
 
 
-//<Navbar collapseOnSelect expand="lg" bg="light" variant="light" sticky="top">
-
 class App extends Component{
     render() {
         const line_class={
