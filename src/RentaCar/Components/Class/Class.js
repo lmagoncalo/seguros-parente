@@ -9,7 +9,6 @@ class Class extends Component {
     }
 
     render() {
-
         const total_class={
             padding:'0',
             margin:'0',
