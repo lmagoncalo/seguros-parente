@@ -1,11 +1,6 @@
 import React from 'react';
 import './App.css';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import SegurosApp from "../Seguros/Components/SegurosApp/SegurosApp";
 import LandingPage from "../LandingPage/LandingPage";
 import RentaCarApp from "../RentaCar/Components/RentaCarApp/RentaCarApp";
