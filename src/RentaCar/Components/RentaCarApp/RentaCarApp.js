@@ -8,8 +8,23 @@ import {Nav, Navbar} from "react-bootstrap";
 import {getTextColor,getPrimaryColorFinal,getSecundaryColor} from "../../../Colors";
 import {getPadding} from "../../Utils";
 
-
 class RentaCarApp extends Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: 'home',
+        };
+    }
+
+    setSelected(new_name){
+        this.setState({name: new_name})
+    }
+
+    isSelected(new_name){
+        return this.state.name === new_name;
+
+    }
+
     render() {
         const line_class={
             margin: "auto",
@@ -51,16 +66,22 @@ class RentaCarApp extends Component{
                 <Navbar.Toggle aria-controls="responsive-navbar-nav"style={{borderWidth: "0px"}} />
                 <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
                     <Nav style={menu_app} >
-                        <Nav.Link style={nav_bar} href="#home">SOBRE NÓS<hr style={line_class} /></Nav.Link>
-                        <Nav.Link style={nav_bar} href="#classes">FROTA</Nav.Link>
-                        <Nav.Link style={nav_bar} href="#simulation">PEDIR SIMULAÇÃO</Nav.Link>
+                        <Nav.Link style={nav_bar} onClick={() => this.setSelected('home')} href="#home">SOBRE NÓS {this.isSelected('home') ? <hr style={line_class} /> : <div/>} </Nav.Link>
+                        <Nav.Link style={nav_bar} onClick={() => this.setSelected('classes')} href="#classes">FROTA {this.isSelected('classes') ? <hr style={line_class} /> : <div/>}</Nav.Link>
+                        <Nav.Link style={nav_bar} onClick={() => this.setSelected('simulation')} href="#simulation">PEDIR SIMULAÇÃO {this.isSelected('simulation') ? <hr style={line_class} /> : <div/>}</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
 
-            <Home id="home"/>
-            <Classes id="classes"/>
-            <Simulation id="simulation"/>
+            <div id='home'>
+                <Home name="home"/>
+            </div>
+            <div id='classes'>
+                <Classes name="classes"/>
+            </div>
+            <div id='simulation'>
+                <Simulation name="simulation"/>
+            </div>
             <Footer/>
         </div>
     );
