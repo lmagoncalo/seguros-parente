@@ -91,14 +91,14 @@ class Simulation extends Component {
 
         var elasticemail = require('elasticemail');
         var client = elasticemail.createClient({
-            username: 'veriwa9198@itiomail.com',
-            apiKey: '9E1130144C1314C06B344AF3DE45D049DF2D'
+            username: 'rentacar@carlosparente.com',
+            apiKey: '43FF81190824105639D72209318C97ACB266'
         });
 
         var msg = {
-            from: 'veriwa9198@itiomail.com',
-            from_name: this.state.name,
-            to: 'jessica.aparente@gmail.com',
+            from: 'rentacar@carlosparente.com',
+            from_name: 'Rent-a-Car',
+            to: 'seguros@carlosparente.com',
             subject: 'Pedido de simulação',
             body_text: email_body
         };

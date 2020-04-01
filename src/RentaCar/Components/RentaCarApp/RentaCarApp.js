@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import './App.css';
+import './RentaCarApp.css';
 import Home from "../Home/Home";
 import Classes from "../Classes/Classes";
 import Simulation from "../Simulation/Simulation";
 import Footer from "../Footer/Footer";
 import {Nav, Navbar} from "react-bootstrap";
-import {getTextColor,getPrimaryColor,getPrimaryColorFinal,getSecundaryColor} from "../../Colors";
+import {getTextColor,getPrimaryColorFinal,getSecundaryColor} from "../../../Colors";
 import {getPadding} from "../../Utils";
 
 
-class App extends Component{
+class RentaCarApp extends Component{
     render() {
         const line_class={
             margin: "auto",
@@ -67,4 +67,4 @@ class App extends Component{
 }
 }
 
-export default App;
+export default RentaCarApp;

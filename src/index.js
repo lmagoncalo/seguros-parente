@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import App from './Components/App/App';
 import * as serviceWorker from './serviceWorker';
+import App from "./App/App";
+/*
 import ReactGA from 'react-ga';
 import auth from './auth.ts'; // Sample authentication provider
 
@@ -13,7 +14,7 @@ ReactGA.set({
     // any data that is relevant to the user session
     // that you would like to track with google analytics
 });
-
+*/
 ReactDOM.render(
   <React.StrictMode>
     <App />

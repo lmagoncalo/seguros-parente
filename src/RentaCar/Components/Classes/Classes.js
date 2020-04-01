@@ -3,7 +3,7 @@ import Title from "../Title/Title";
 import {getClasses} from "../../Utils";
 import Class from '../Class/Class'
 import {ListGroup} from "react-bootstrap";
-import {getPrimaryColorFinal} from "../../Colors";
+import {getPrimaryColorFinal} from "../../../Colors";
 
 
 class Classes extends Component {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {getPrimaryColorFinal} from "../../Colors";
+import {getPrimaryColorFinal} from "../../../Colors";
 
 class Footer extends Component {
     render() {

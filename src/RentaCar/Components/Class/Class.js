@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Image} from "react-bootstrap";
 import cars from './cars.png'
 import {getIcons, getPadding, getSubMenuTop} from "../../Utils";
-import {getPrimaryColor, getPrimaryColorFinal} from "../../Colors";
+import {getPrimaryColor, getPrimaryColorFinal} from "../../../Colors";
 
 class Class extends Component {
     constructor(props) {
