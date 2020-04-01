@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import "react-datepicker/dist/react-datepicker.css";
 import Title from "../Title/Title";
 import {Form, Button, Col, Alert} from "react-bootstrap";
-import {createEmail} from "../../Utils";
+import {createEmail, getPadding, getSubMenuTop} from "../../Utils";
 import DatePicker, { registerLocale } from "react-datepicker";
 import ptBR from "date-fns/locale/pt-BR";
 import { format } from 'date-fns'
@@ -98,7 +98,7 @@ class Simulation extends Component {
         var msg = {
             from: 'rentacar@carlosparente.com',
             from_name: 'Rent-a-Car',
-            to: 'seguros@carlosparente.com',
+            to: 'jessica.aparente@gmail.com',
             subject: 'Pedido de simulação',
             body_text: email_body
         };
@@ -116,59 +116,105 @@ class Simulation extends Component {
     }
 
     render() {
+        const menu_simulation={
+            paddingLeft: getPadding(),
+            paddingRight: getPadding()
+        };
+
+        const subTitle_simulation= {
+            fontFamily: 'Text_Bold',
+            fontVariant: "small-caps",
+            fontSize: "35px",
+            letterSpacing: "1px",
+            marginTop: getSubMenuTop(),
+            marginBottom: "20px"
+        };
+
+        const form_simulation={
+            boxSizing: "border-box"
+        };
+
+        const formLegend_simulation={
+            fontFamily: 'Text_Bold',
+            fontVariant: "small-caps",
+            fontSize: "13px",
+            letterSpacing: "1px",
+        };
+
+        const ratio_simulation={
+           display:"inline-block",
+            width:"100%",
+            padding:0,
+            margin:0,
+            fontSize: "23px",
+            paddingBottom:"20px"
+        };
+
+        const ratio_simulation_right={
+            padding:0,
+            float:"right",
+            width:"50%"
+        };
+
+        const ratio_simulation_left={
+            padding:0,
+            float:"left",
+            width:"50%",
+        };
+
         return (
             <div>
                 <Title name={"Pedir simulação"}/>
-                <Form onSubmit={this.handleSubmit}>
-                    <h3>informação de contacto</h3>
+                <Form style={menu_simulation} onSubmit={this.handleSubmit}>
+                    <h3 style={subTitle_simulation}>informações de contacto</h3>
                     <Form.Group controlId="formBasicText">
-                        <Form.Control size="lg" type="text" onChange={this.handleNameChange} />
-                        <Form.Text className="text-muted">
-                            nome próprio e apelido
+                        <Form.Control style={form_simulation} size="lg" type="text" onChange={this.handleNameChange} />
+                        <Form.Text style={formLegend_simulation} className="text-muted">
+                            nome próprio e apelido*
                         </Form.Text>
                     </Form.Group>
                     <Form.Group controlId="formBasicEmail">
-                        <Form.Control size="lg" type="email" onChange={this.handleEmailChange} />
-                        <Form.Text className="text-muted">
-                            email
+                        <Form.Control style={form_simulation} size="lg" type="email" onChange={this.handleEmailChange} />
+                        <Form.Text style={formLegend_simulation} className="text-muted">
+                            email*
                         </Form.Text>
                     </Form.Group>
 
-                    <h3>informação de contacto</h3>
-                    <Form.Group onChange={this.handleCarTypeChange}>
-                        <Col sm={10}>
+                    <h3 style={subTitle_simulation}>tipo de veículo</h3>
+                    <Form.Group onChange={this.handleCarTypeChange} style={ratio_simulation}>
+                        <Col sm={10} style={ratio_simulation_left}>
                             <Form.Check
-                                type="radio"
+                                type="checkbox"
                                 label="Pequenos Utilitários"
                                 name="formHorizontalRadios"
                                 id="formHorizontalRadios1"
                                 value="1"
                             />
                             <Form.Check
-                                type="radio"
+                                type="checkbox"
                                 label="Utilitários"
                                 name="formHorizontalRadios"
                                 id="formHorizontalRadios2"
                                 value="2"
                             />
                             <Form.Check
-                                type="radio"
+                                type="checkbox"
                                 label="Utilitários Económicos"
                                 name="formHorizontalRadios"
                                 id="formHorizontalRadios3"
                                 value="3"
                             />
                         </Col>
-                        <Col sm={10}>
+                        <Col sm={10} style={ratio_simulation_right}>
                             <Form.Check
-                                type="radio"
+                                type="checkbox"
                                 label="Carrinhas"
                                 name="formHorizontalRadios"
                                 id="formHorizontalRadios4"
                                 value="4"
                             />
                             <Form.Check
-                                type="radio"
+                                type="checkbox"
                                 label="Monovolumes"
                                 name="formHorizontalRadios"
                                 id="formHorizontalRadios5"
@@ -177,7 +223,7 @@ class Simulation extends Component {
                         </Col>
                     </Form.Group>
 
-                    <h3>data pretendida</h3>
+                    <h3 style={subTitle_simulation}>data pretendida</h3>
 
                     <DatePicker
                         selected={this.state.start_date}
@@ -191,7 +237,8 @@ class Simulation extends Component {
                         onChange={this.handleEndDateChange}
                     />
 
-                    <h3>mensagem</h3>
+                    <h3 style={subTitle_simulation}>mensagem</h3>
+
                     <Form.Group>
                         <Form.Control as="textarea" rows="4" onChange={this.handleMessageChange} />
                     </Form.Group>

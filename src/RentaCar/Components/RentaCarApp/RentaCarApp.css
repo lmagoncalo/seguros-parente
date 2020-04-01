@@ -41,3 +41,37 @@ body {
 .list-group-item{
     padding:0;
 }
+
+/*FORM SIMULATION*/
+.form-control-lg {
+    font-size: 36px;
+    font-family: 'Display_Bold_Italic', serif;
+}
+.form-control {
+    color:rgb(255,65,99);
+    border-radius: 0;
+ }
+input#formBasicText, input#formBasicEmail {
+    border: 0;
+    outline: 0;
+    border-bottom: 3px solid black;
+    padding:0;
+    line-height: 1px;
+    height: 60px;
+}
+input#formBasicText:focus, input#formBasicEmail:focus{
+    border:0;
+    outline:0;
+    color:rgb(255,65,99);
+    box-shadow:none;
+    border-bottom: 3px solid rgb(255,65,99);
+}
+
+.text-muted {
+    color: black !important;
+}
+
+input[type=checkbox] {
+    margin-top: 10px;
+    background: white;
+}

@@ -22,9 +22,7 @@ class Class extends Component {
              margin:"0",
              position: "absolute",
              //backgroundImage: "linear-gradient("+getPrimaryColorFinal()+ ", rgba("+getPrimaryColor()+",0.6),rgba("+getPrimaryColor()+",0.3), rgba("+getPrimaryColor()+",0.1), rgba("+getPrimaryColor()+",0) )",
-
          };
-
 
         const menu_class={
             paddingLeft:getPadding(),
@@ -59,13 +57,9 @@ class Class extends Component {
             marginTop:0,
             paddingBottom:0,
             margin:'0',
-            //textAlign: this.state.info_orientation,
             position: "relative",
-           // float: this.state.info_orientation
             float: "left",
             width:"40%",
-           // backgroundColor:"rgba(0,255,0,0.5)"
-
         };
 
         const info_text_class={
