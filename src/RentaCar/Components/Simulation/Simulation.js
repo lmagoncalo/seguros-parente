@@ -89,28 +89,23 @@ class Simulation extends Component {
         const email_body = createEmail(this.state.email, this.state.name, this.state.car_type, formatted_start_date, formatted_end_date, this.state.message);
         console.log(email_body);
 
-        var elasticemail = require('elasticemail');
-        var client = elasticemail.createClient({
-            username: 'rentacar@carlosparente.com',
-            apiKey: '43FF81190824105639D72209318C97ACB266'
-        });
+        var sendinblue = require('sendinblue-api');
 
-        var msg = {
-            from: 'rentacar@carlosparente.com',
-            from_name: 'Rent-a-Car',
-            to: 'jessica.aparente@gmail.com',
-            subject: 'Pedido de simulação',
-            body_text: email_body
+        var parameters = { "apiKey": "NgycrTYUqFICXhBv", "timeout": 5000 };
+        var sendinObj = new sendinblue(parameters);
+
+        var input =	{ 'to': { 'rentacar@carlosparente.com': 'Rent a Car' },
+            'from': ['rentacar@carlosparente.com', 'Rent a Car'],
+            'subject': 'Pedido de Simulação',
+            'html': email_body,
+            'headers' : {'Access-Control-Allow-Origin': '*'}
         };
 
-        var self = this;
-        client.mailer.send(msg, function(err, result) {
-            if (err) {
-                self.createError();
-                return console.error(err);
+        sendinObj.send_email(input, function(err, response){
+            if(err){
+                console.log(err);
             } else {
-                self.createSuccess();
-                return console.log(result);
+                console.log(response);
             }
         });
     }
