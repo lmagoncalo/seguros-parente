@@ -6,8 +6,8 @@ import {createEmail, getMenuTop, getPadding, getSubMenuTop} from "../../Utils";
 import DatePicker, { registerLocale } from "react-datepicker";
 import ptBR from "date-fns/locale/pt-BR";
 import { format } from 'date-fns'
-import {getPrimaryColor,getPrimaryColorFinal} from "../../../Colors";
 import axios from 'axios';
+
 
 class Simulation extends Component {
     constructor(props) {
@@ -62,10 +62,31 @@ class Simulation extends Component {
         this.setState({ end_date: evt });
     }
 
-    createError(){
+    checkForms() {
+        if(!this.state.name.trim()){
+            return false;
+        }
+        if(!this.state.email.trim()){
+            return false;
+        }
+        if(!this.state.car_type.trim()){
+            return false;
+        }
+        if(!this.state.message.trim()){
+            return false;
+        }
+        if(this.state.start_date == null){
+            return false;
+        }
+        if(this.state.end_date == null){
+            return false;
+        }
+        return true;
+    }
+
+    createError(errorMessage){
         let new_color = 'danger';
-        let new_alert = 'O e-mail não foi enviado!';
-        this.setState({ show: !this.state.show, color: new_color, alert: new_alert });
+        this.setState({ show: !this.state.show, color: new_color, alert: errorMessage });
 
         this.timeoutId = setTimeout(function () {
             this.setState({show: false});
@@ -85,17 +106,23 @@ class Simulation extends Component {
     handleSubmit(event) {
         event.preventDefault();
 
-        const formatted_start_date = format(this.state.start_date, 'dd-MM-yyyy');
-        const formatted_end_date = format(this.state.end_date, 'dd-MM-yyyy');
+        if(this.checkForms()){
+            const formatted_start_date = format(this.state.start_date, 'dd-MM-yyyy');
+            const formatted_end_date = format(this.state.end_date, 'dd-MM-yyyy');
 
-        const email = createEmail(this.state.email, this.state.name, this.state.car_type, formatted_start_date, formatted_end_date, this.state.message);
+            const email = createEmail(this.state.email, this.state.name, this.state.car_type, formatted_start_date, formatted_end_date, this.state.message);
 
-        axios
-            .post('https://rentacar-backoffice.herokuapp.com/rentacar/email', email)
-            .then((result) => this.createSuccess())
-            .catch(err => {
-                this.createError();
-            });
+            axios
+                .post('https://rentacar-backoffice.herokuapp.com/rentacar/email', email)
+                .then((result) => this.createSuccess())
+                .catch(err => {
+                    this.createError('O e-mail não foi enviado!');
+                });
+        } else {
+            this.createError('É necessário preencher todos os campos!');
+        }
+
+
     }
 
     render() {
