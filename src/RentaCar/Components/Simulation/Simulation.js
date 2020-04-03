@@ -138,7 +138,7 @@ class Simulation extends Component {
         */
 
         axios
-            .post('http://127.0.0.1:5000/rentacar/email', email)
+            .post('https://rentacar-backoffice.herokuapp.com/rentacar/email', email)
             .then((result) => this.createSuccess())
             .catch(err => {
                 this.createError();
