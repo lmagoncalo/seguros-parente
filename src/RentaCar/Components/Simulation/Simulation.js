@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import "react-datepicker/dist/react-datepicker.css";
 import Title from "../Title/Title";
 import {Form, Button, Col, Alert} from "react-bootstrap";
-import {createEmail, getPadding, getSubMenuTop} from "../../Utils";
+import {createEmail, getMenuTop, getPadding, getSubMenuTop} from "../../Utils";
 import DatePicker, { registerLocale } from "react-datepicker";
 import ptBR from "date-fns/locale/pt-BR";
 import { format } from 'date-fns'
+import {getPrimaryColor,getPrimaryColorFinal} from "../../../Colors";
 import axios from 'axios';
 
 class Simulation extends Component {
@@ -89,54 +90,6 @@ class Simulation extends Component {
 
         const email = createEmail(this.state.email, this.state.name, this.state.car_type, formatted_start_date, formatted_end_date, this.state.message);
 
-        /*
-        var elasticemail = require('elasticemail');
-        var client = elasticemail.createClient({
-            username: 'rentacar@carlosparente.com',
-            apiKey: '43FF81190824105639D72209318C97ACB266'
-        });
-
-        var msg = {
-            from: 'rentacar@carlosparente.com',
-            from_name: 'Rent-a-Car',
-            to: 'lmagoncalo@gmail.com',
-            subject: 'Pedido de simulação',
-            body_text: email_body
-        };
-
-        var self = this;
-        client.mailer.send(msg, function(err, result) {
-            if (err) {
-                self.createError();
-                return console.error(err);
-            } else {
-                self.createSuccess();
-                return console.log(result);
-            }
-        });´
-        */
-        /*
-        var sendinblue = require('sendinblue-api');
-
-        var parameters = { "apiKey": "NgycrTYUqFICXhBv", "timeout": 5000 };
-        var sendinObj = new sendinblue(parameters);
-
-        var input =	{ 'to': { 'rentacar@carlosparente.com': 'Rent a Car' },
-            'from': ['rentacar@carlosparente.com', 'Rent a Car'],
-            'subject': 'Pedido de Simulação',
-            'html': email_body,
-            'headers' : {'Access-Control-Allow-Origin': '*'}
-        };
-
-        sendinObj.send_email(input, function(err, response){
-            if(err){
-                console.log(err);
-            } else {
-                console.log(response);
-            }
-        });
-        */
-
         axios
             .post('https://rentacar-backoffice.herokuapp.com/rentacar/email', email)
             .then((result) => this.createSuccess())
@@ -172,7 +125,7 @@ class Simulation extends Component {
         };
 
         const ratio_simulation={
-           display:"inline-block",
+            display:"inline-block",
             width:"100%",
             padding:0,
             margin:0,
@@ -180,16 +133,34 @@ class Simulation extends Component {
             paddingBottom:"20px"
         };
 
-        const ratio_simulation_right={
+        const simulation_right={
             padding:0,
             float:"right",
             width:"50%"
         };
 
-        const ratio_simulation_left={
+        const simulation_left={
             padding:0,
             float:"left",
             width:"50%",
+        };
+
+
+        const dateBet_simulation={
+            marginTop: 0,
+            width: "10%",
+            fontSize: "36px",
+            display: "inline-block",
+            textAlign:"center",
+            fontFamily:"Text_Bold",
+        };
+
+        const submitBtn_simulation={
+            marginTop: getSubMenuTop(),
+            marginBottom: getMenuTop(),
+            borderRadius: "0",
+            fontSize: "23px",
+            boxShadow: "none",
         };
 
         return (
@@ -212,7 +183,7 @@ class Simulation extends Component {
 
                     <h3 style={subTitle_simulation}>tipo de veículo</h3>
                     <Form.Group onChange={this.handleCarTypeChange} style={ratio_simulation}>
-                        <Col sm={10} style={ratio_simulation_left}>
+                        <Col sm={10} style={simulation_left}>
                             <Form.Check
                                 type="checkbox"
                                 label="Pequenos Utilitários"
@@ -235,7 +206,7 @@ class Simulation extends Component {
                                 value="3"
                             />
                         </Col>
-                        <Col sm={10} style={ratio_simulation_right}>
+                        <Col sm={10} style={simulation_right}>
                             <Form.Check
                                 type="checkbox"
                                 label="Carrinhas"
@@ -255,25 +226,26 @@ class Simulation extends Component {
 
                     <h3 style={subTitle_simulation}>data pretendida</h3>
 
+                    <div >
                     <DatePicker
                         selected={this.state.start_date}
                         dateFormat="dd/MM/yyyy"
                         onChange={this.handleStartDateChange}
                     />
-
+                    <p style={dateBet_simulation}>—</p>
                     <DatePicker
                         selected={this.state.end_date}
                         dateFormat="dd/MM/yyyy"
                         onChange={this.handleEndDateChange}
                     />
-
+                    </div>
                     <h3 style={subTitle_simulation}>mensagem</h3>
 
                     <Form.Group>
                         <Form.Control as="textarea" rows="4" onChange={this.handleMessageChange} />
                     </Form.Group>
 
-                    <Button variant="outline-dark" type="submit">
+                    <Button style={submitBtn_simulation} variant="none" type="submit">
                         submeter pedido
                     </Button>
                     <Alert variant={this.state.color} show={this.state.show}>

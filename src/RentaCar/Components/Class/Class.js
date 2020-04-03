@@ -95,7 +95,7 @@ class Class extends Component {
 
         return (
             <div style={total_class}>
-                <div style={menu_rect}/>
+                {/* <div style={menu_rect}/>*/}
                 <div style={menu_class}>
 
                     <div style={divSubTitle_class}>
