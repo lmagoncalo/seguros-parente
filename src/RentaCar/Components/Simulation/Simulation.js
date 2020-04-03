@@ -7,6 +7,7 @@ import DatePicker, { registerLocale } from "react-datepicker";
 import ptBR from "date-fns/locale/pt-BR";
 import { format } from 'date-fns'
 import {getPrimaryColor,getPrimaryColorFinal} from "../../../Colors";
+import axios from 'axios';
 
 class Simulation extends Component {
     constructor(props) {
@@ -62,13 +63,13 @@ class Simulation extends Component {
     }
 
     createError(){
-        let new_color = 'alert';
+        let new_color = 'danger';
         let new_alert = 'O e-mail não foi enviado!';
         this.setState({ show: !this.state.show, color: new_color, alert: new_alert });
 
         this.timeoutId = setTimeout(function () {
-            this.setState({show: true});
-        }.bind(this), 1000);
+            this.setState({show: false});
+        }.bind(this), 5000);
     }
 
     createSuccess(){
@@ -84,32 +85,17 @@ class Simulation extends Component {
     handleSubmit(event) {
         event.preventDefault();
 
-        const formatted_start_date = format(this.state.start_date, 'yyyy-MM-dd');
-        const formatted_end_date = format(this.state.end_date, 'yyyy-MM-dd');
+        const formatted_start_date = format(this.state.start_date, 'dd-MM-yyyy');
+        const formatted_end_date = format(this.state.end_date, 'dd-MM-yyyy');
 
-        const email_body = createEmail(this.state.email, this.state.name, this.state.car_type, formatted_start_date, formatted_end_date, this.state.message);
-        console.log(email_body);
+        const email = createEmail(this.state.email, this.state.name, this.state.car_type, formatted_start_date, formatted_end_date, this.state.message);
 
-        var sendinblue = require('sendinblue-api');
-
-        var parameters = { "apiKey": "NgycrTYUqFICXhBv", "timeout": 5000 };
-        var sendinObj = new sendinblue(parameters);
-
-        var input =	{ 'to': { 'rentacar@carlosparente.com': 'Rent a Car' },
-            'from': ['rentacar@carlosparente.com', 'Rent a Car'],
-            'subject': 'Pedido de Simulação',
-            'html': email_body,
-        };
-        
-
-
-        sendinObj.send_email(input, function(err, response){
-            if(err){
-                console.log(err);
-            } else {
-                console.log(response);
-            }
-        });
+        axios
+            .post('http://127.0.0.1:5000/rentacar/email', email)
+            .then((result) => this.createSuccess())
+            .catch(err => {
+                this.createError();
+            });
     }
 
     render() {

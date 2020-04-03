@@ -59,10 +59,11 @@ export function getClasses() {
 }
 
 export function createEmail(email, name, car_type, start_date, end_date, message) {
+    /*
     let string = "";
 
-    string += "Nome: " + name + "\n";
-    string += "Email: " + email + "\n";
+    string += "Nome: " + name + "<br/>";
+    string += "Email: " + email + "<br/>";
     let car_name;
     switch (car_type) {
         case "1":
@@ -83,12 +84,21 @@ export function createEmail(email, name, car_type, start_date, end_date, message
         default:
             break
     }
-    string += "Tipo de carro: " + car_name + "\n";
-    string += "Data: " + start_date + " até " + end_date + "\n";
-    string += "Mensagem: " + message + "\n";
+    string += "Tipo de carro: " + car_name + "<br/>";
+    string += "Data: " + start_date + " até " + end_date + "<br/>";
+    string += "Mensagem: " + message + "<br/>";
 
     return string;
+     */
+    const obj = {};
+    obj['name'] = name;
+    obj['email'] = email;
+    obj['car_type'] = car_type;
+    obj['start_date'] = start_date;
+    obj['end_date'] = end_date;
+    obj['message'] = message;
 
+    return obj;
 }
 
 export function getPadding() {
