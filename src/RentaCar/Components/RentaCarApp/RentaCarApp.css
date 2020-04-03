@@ -1,3 +1,4 @@
+
 .Nav.Link{
     /*font-variant: small-caps;*/
 }
@@ -51,6 +52,7 @@ body {
     color:rgb(255,65,99);
     border-radius: 0;
  }
+
 input#formBasicText, input#formBasicEmail {
     border: 0;
     outline: 0;
@@ -74,4 +76,73 @@ input#formBasicText:focus, input#formBasicEmail:focus{
 input[type=checkbox] {
     margin-top: 10px;
     background: white;
+}
+
+.react-datepicker-wrapper {
+    width: 45%;
+}
+
+.react-datepicker__input-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+
+input[type="text"] {
+    border: 0;
+    outline: 0;
+    border-bottom: 3px solid black;
+    padding: 0;
+    line-height: 1px;
+    height: 60px;
+    width: 100%;
+    font-size: 36px;
+    font-family: "Display_Bold_Italic", serif;
+    color: rgb(255,65,99);
+}
+
+input[type="text"]:focus {
+    border-bottom: 3px solid rgb(255,65,99);
+
+}
+
+
+textarea.form-control {
+    border-radius: 0;
+    font-size: 23px;
+    outline:0;
+    box-shadow:none;
+
+    color: rgb(255,65,99);
+    border: 3px solid black;
+
+}
+
+textarea.form-control:focus {
+    border-radius: 0;
+    font-size: 23px;
+    outline:0;
+    box-shadow:none;
+    color: rgb(255,65,99);
+    border: 3px solid rgb(255,65,99);
+
+}
+
+button.btn.btn-none:hover{
+    border-radius: 0;
+    font-size: 23px;
+    outline:0;
+    box-shadow:none;
+    background: rgb(255,65,99) !important;
+    color: black;
+    border: 3px solid black;
+}
+button.btn.btn-none {
+    border-radius: 0;
+    font-size: 23px;
+    outline:0;
+    box-shadow:none;
+    color: black;
+    border: 3px solid black;
 }

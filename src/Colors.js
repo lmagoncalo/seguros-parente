@@ -13,7 +13,15 @@ export function getMenuColor(){
     //return getPrimaryColor;
 }
 
+export function finalColor(color,opacity) {
+    return "rgba("+color+",opacity)";
+}
 
 export function getTextColor(){
     return "#000000"
 }
+
+const Colors={
+    primaryColor: finalColor(getPrimaryColor,1),
+    menuColor: finalColor(getMenuColor,1),
+};

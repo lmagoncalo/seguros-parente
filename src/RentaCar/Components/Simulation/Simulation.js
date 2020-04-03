@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import "react-datepicker/dist/react-datepicker.css";
 import Title from "../Title/Title";
 import {Form, Button, Col, Alert} from "react-bootstrap";
-import {createEmail, getPadding, getSubMenuTop} from "../../Utils";
+import {createEmail, getMenuTop, getPadding, getSubMenuTop} from "../../Utils";
 import DatePicker, { registerLocale } from "react-datepicker";
 import ptBR from "date-fns/locale/pt-BR";
 import { format } from 'date-fns'
+import {getPrimaryColor,getPrimaryColorFinal} from "../../../Colors";
 
 class Simulation extends Component {
     constructor(props) {
@@ -98,8 +99,9 @@ class Simulation extends Component {
             'from': ['rentacar@carlosparente.com', 'Rent a Car'],
             'subject': 'Pedido de Simulação',
             'html': email_body,
-            'headers' : {'Access-Control-Allow-Origin': '*'}
         };
+        
+
 
         sendinObj.send_email(input, function(err, response){
             if(err){
@@ -137,7 +139,7 @@ class Simulation extends Component {
         };
 
         const ratio_simulation={
-           display:"inline-block",
+            display:"inline-block",
             width:"100%",
             padding:0,
             margin:0,
@@ -145,16 +147,34 @@ class Simulation extends Component {
             paddingBottom:"20px"
         };
 
-        const ratio_simulation_right={
+        const simulation_right={
             padding:0,
             float:"right",
             width:"50%"
         };
 
-        const ratio_simulation_left={
+        const simulation_left={
             padding:0,
             float:"left",
             width:"50%",
+        };
+
+
+        const dateBet_simulation={
+            marginTop: 0,
+            width: "10%",
+            fontSize: "36px",
+            display: "inline-block",
+            textAlign:"center",
+            fontFamily:"Text_Bold",
+        };
+
+        const submitBtn_simulation={
+            marginTop: getSubMenuTop(),
+            marginBottom: getMenuTop(),
+            borderRadius: "0",
+            fontSize: "23px",
+            boxShadow: "none",
         };
 
         return (
@@ -177,7 +197,7 @@ class Simulation extends Component {
 
                     <h3 style={subTitle_simulation}>tipo de veículo</h3>
                     <Form.Group onChange={this.handleCarTypeChange} style={ratio_simulation}>
-                        <Col sm={10} style={ratio_simulation_left}>
+                        <Col sm={10} style={simulation_left}>
                             <Form.Check
                                 type="checkbox"
                                 label="Pequenos Utilitários"
@@ -200,7 +220,7 @@ class Simulation extends Component {
                                 value="3"
                             />
                         </Col>
-                        <Col sm={10} style={ratio_simulation_right}>
+                        <Col sm={10} style={simulation_right}>
                             <Form.Check
                                 type="checkbox"
                                 label="Carrinhas"
@@ -220,25 +240,26 @@ class Simulation extends Component {
 
                     <h3 style={subTitle_simulation}>data pretendida</h3>
 
+                    <div >
                     <DatePicker
                         selected={this.state.start_date}
                         dateFormat="dd/MM/yyyy"
                         onChange={this.handleStartDateChange}
                     />
-
+                    <p style={dateBet_simulation}>—</p>
                     <DatePicker
                         selected={this.state.end_date}
                         dateFormat="dd/MM/yyyy"
                         onChange={this.handleEndDateChange}
                     />
-
+                    </div>
                     <h3 style={subTitle_simulation}>mensagem</h3>
 
                     <Form.Group>
                         <Form.Control as="textarea" rows="4" onChange={this.handleMessageChange} />
                     </Form.Group>
 
-                    <Button variant="outline-dark" type="submit">
+                    <Button style={submitBtn_simulation} variant="none" type="submit">
                         submeter pedido
                     </Button>
                     <Alert variant={this.state.color} show={this.state.show}>
