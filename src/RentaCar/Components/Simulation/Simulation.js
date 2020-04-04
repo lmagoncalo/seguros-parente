@@ -105,13 +105,16 @@ class Simulation extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
+        event.target.reset();
 
         if(this.checkForms()){
             const formatted_start_date = format(this.state.start_date, 'dd-MM-yyyy');
             const formatted_end_date = format(this.state.end_date, 'dd-MM-yyyy');
 
-            const email = createEmail(this.state.email, this.state.name, this.state.car_type, formatted_start_date, formatted_end_date, this.state.message);
+            this.setState({start_date: null});
+            this.setState({end_date: null});
 
+            const email = createEmail(this.state.email, this.state.name, this.state.car_type, formatted_start_date, formatted_end_date, this.state.message);
             axios
                 .post('https://rentacar-backoffice.herokuapp.com/rentacar/email', email)
                 .then((result) => this.createSuccess())
