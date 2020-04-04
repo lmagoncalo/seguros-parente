@@ -12,6 +12,7 @@
     "elasticemail": "^0.2.0",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.0",
+    "react-button-loaders": "0.0.1",
     "react-datepicker": "^2.14.1",
     "react-dom": "^16.13.1",
     "react-ga": "^2.7.0",

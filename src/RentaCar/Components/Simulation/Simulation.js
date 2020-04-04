@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import "react-datepicker/dist/react-datepicker.css";
 import Title from "../Title/Title";
-import {Form, Button, Col, Alert} from "react-bootstrap";
+import {Form, Col, Alert} from "react-bootstrap";
 import {createEmail, getMenuTop, getPadding, getSubMenuTop} from "../../Utils";
 import DatePicker, { registerLocale } from "react-datepicker";
 import ptBR from "date-fns/locale/pt-BR";
 import { format } from 'date-fns'
 import axios from 'axios';
+import { Rabbit as Button } from 'react-button-loaders'
 
 
 class Simulation extends Component {
@@ -21,7 +22,8 @@ class Simulation extends Component {
             end_date: null,
             show: false,
             color: 'success',
-            alert: ''
+            alert: '',
+            sendState: ''
         };
         this.handleNameChange = this.handleNameChange.bind(this);
         this.handleEmailChange = this.handleEmailChange.bind(this);
@@ -85,21 +87,28 @@ class Simulation extends Component {
     }
 
     createError(errorMessage){
+        this.setState({sendState: 'finished'});
+
         let new_color = 'danger';
         this.setState({ show: !this.state.show, color: new_color, alert: errorMessage });
 
         this.timeoutId = setTimeout(function () {
             this.setState({show: false});
+            this.setState({sendState: ''});
         }.bind(this), 5000);
+
     }
 
     createSuccess(){
+        this.setState({sendState: 'finished'});
+
         let new_color = 'success';
         let new_alert = 'O e-mail foi enviado com sucesso.';
         this.setState({ show: !this.state.show, color: new_color, alert: new_alert });
 
         this.timeoutId = setTimeout(function () {
             this.setState({show: false});
+            this.setState({sendState: ''});
         }.bind(this), 5000);
     }
 
@@ -108,6 +117,9 @@ class Simulation extends Component {
         event.target.reset();
 
         if(this.checkForms()){
+            // Start loading
+            this.setState({sendState: 'loading'});
+
             const formatted_start_date = format(this.state.start_date, 'dd-MM-yyyy');
             const formatted_end_date = format(this.state.end_date, 'dd-MM-yyyy');
 
@@ -117,7 +129,9 @@ class Simulation extends Component {
             const email = createEmail(this.state.email, this.state.name, this.state.car_type, formatted_start_date, formatted_end_date, this.state.message);
             axios
                 .post('https://rentacar-backoffice.herokuapp.com/rentacar/email', email)
-                .then((result) => this.createSuccess())
+                .then((result) => {
+                    this.createSuccess();
+                })
                 .catch(err => {
                     this.createError('O e-mail não foi enviado!');
                 });
@@ -275,7 +289,7 @@ class Simulation extends Component {
                         <Form.Control as="textarea" rows="4" onChange={this.handleMessageChange} />
                     </Form.Group>
 
-                    <Button style={submitBtn_simulation} variant="none" type="submit">
+                    <Button style={submitBtn_simulation} type="submit" state={this.state.sendState}>
                         submeter pedido
                     </Button>
                     <Alert variant={this.state.color} show={this.state.show}>
