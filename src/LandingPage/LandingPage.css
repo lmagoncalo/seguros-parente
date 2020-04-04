@@ -1,4 +1,45 @@
+@font-face {
+    font-family: 'Display_Bold_Italic';
+    src: local('Display_Bold_Italic'),
+    url('../fonts/AngleciaProDisplay-BoldItalic.otf') format('opentype')
+}
+
+@font-face {
+    font-family: 'Display_Medium';
+    src: local('Display_Medium'),
+    url('../fonts/AngleciaProDisplay-Medium.otf') format('opentype')
+}
+
+@font-face {
+    font-family: 'Text_Bold';
+    src: local('Text_Bold'),
+    url('../fonts/AngleciaProText-Bold.otf') format('opentype')
+}
+
+@font-face {
+    font-family: 'Text_Medium';
+    src: local('Text_Medium'),
+    url('../fonts/AngleciaProText-Medium.otf') format('opentype')
+}
+
+@font-face {
+    font-family: 'Text_Regular';
+    src: local('Text_Regular'),
+    url('../fonts/AngleciaProText-Regular.otf') format('opentype')
+}
+
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: local('Montserrat-Bold'),
+    url('../fonts/Montserrat-Bold.ttf') format('opentype')
+}
+
 html, body {
     height: 100%;
     width: 100%;
+}
+
+a,a:hover{
+    text-decoration: none;
+    color:white;
 }

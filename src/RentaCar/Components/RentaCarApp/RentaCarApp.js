@@ -42,8 +42,7 @@ class RentaCarApp extends Component{
         };
 
         const divMenu_app = {
-            backgroundImage: "linear-gradient(rgba("+getMenuColor()+ ",1), rgba("+getMenuColor()+",0.6),rgba("+getMenuColor()+",0.3), rgba("+getMenuColor()+",0.1), rgba("+getMenuColor()+",0) )",
-        //    backgroundImage: "linear-gradient("+getPrimaryColor()+ ",1), rgba("+getPrimaryColor()+",0.6),rgba("+getPrimaryColor()+",0.3), rgba("+getPrimaryColor()+",0.1), rgba("+getPrimaryColor()+",0) )",
+            backgroundImage: "linear-gradient(rgba("+getPrimaryColor()+ ",1), rgba("+getPrimaryColor()+",0.6),rgba("+getPrimaryColor()+",0.3), rgba("+getPrimaryColor()+",0.1), rgba("+getPrimaryColor()+",0) )",
             borderWidth:"0px",
             margin:"0",
             width:"100%",

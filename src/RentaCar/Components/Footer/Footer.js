@@ -24,22 +24,24 @@ class Footer extends Component {
             paddingRight: getPadding(),
             textAlign: 'center',
             color:'white',
-            paddingTop: "100px",
-            paddingBottom: "100px",
+            paddingTop: "80px",
+            paddingBottom: "120px",
             fontFamily: 'Text_Bold',
-            fontVariant: "small-caps",
-            letterSpacing: "1px",
-
-        };
-
-        const mail = {
-            fontSize: "23px",
-            marginBottom: "8px"
-        };
-        const contactos = {
             fontSize: "18px",
+            letterSpacing: "1px",
         };
 
+
+        const leftDiv_Footer={
+          width:'50%',
+          float:'left',
+          display:'inline-block',
+        };
+        const rightDiv_Footer={
+            width:'50%',
+            float:'right',
+            display:'inline-block',
+        };
 
 
         return (
@@ -47,8 +49,12 @@ class Footer extends Component {
                 {/*  <div style={menuRect_footer}/>*/}
 
                 <div style={menu_footer}>
-                    <div style={mail}>seguros@carlosparente.com</div>
-                    <div style={contactos}>917 265 180 · 258 404 888</div>
+                    <div style={leftDiv_Footer}>
+                        <div>Avenida do Centro Cívio nº5, <br/>4910-431 Vila Praia de Âncora</div>
+                    </div>
+                    <div style={rightDiv_Footer}>
+                        <div>seguros@carlosparente.com  <br/>917 265 180 · 258 404 888</div>
+                    </div>
                 </div>
             </div>
         );

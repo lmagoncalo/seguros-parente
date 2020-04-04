@@ -3,36 +3,6 @@
     /*font-variant: small-caps;*/
 }
 
-@font-face {
-    font-family: 'Display_Bold_Italic';
-    src: local('Display_Bold_Italic'),
-    url('../../../fonts/AngleciaProDisplay-BoldItalic.otf') format('opentype')
-}
-
-@font-face {
-    font-family: 'Display_Medium';
-    src: local('Display_Medium'),
-    url('../../../fonts/AngleciaProDisplay-Medium.otf') format('opentype')
-}
-
-@font-face {
-    font-family: 'Text_Bold';
-    src: local('Text_Bold'),
-    url('../../../fonts/AngleciaProText-Bold.otf') format('opentype')
-}
-
-@font-face {
-    font-family: 'Text_Medium';
-    src: local('Text_Medium'),
-    url('../../../fonts/AngleciaProText-Medium.otf') format('opentype')
-}
-
-@font-face {
-    font-family: 'Text_Regular';
-    src: local('Text_Regular'),
-    url('../../../fonts/AngleciaProText-Regular.otf') format('opentype')
-}
-
 
 body {
     font-family: 'Text_Medium',serif;
@@ -49,7 +19,8 @@ body {
     font-family: 'Display_Bold_Italic', serif;
 }
 .form-control {
-    color:rgb(255,65,99);
+   /* color:rgb(255,65,99);*/
+    color:rgb(89,127,251);
     border-radius: 0;
  }
 
@@ -64,9 +35,11 @@ input#formBasicText, input#formBasicEmail {
 input#formBasicText:focus, input#formBasicEmail:focus{
     border:0;
     outline:0;
-    color:rgb(255,65,99);
+    /* color:rgb(255,65,99);*/
+    color:rgb(89,127,251);
     box-shadow:none;
-    border-bottom: 3px solid rgb(255,65,99);
+    /*border-bottom: 3px solid rgb(255,65,99);*/
+    border-bottom: 3px solid rgb(89,127,251);
 }
 
 .text-muted {
@@ -99,11 +72,13 @@ input[type="text"] {
     width: 100%;
     font-size: 36px;
     font-family: "Display_Bold_Italic", serif;
-    color: rgb(255,65,99);
+    /*color: rgb(255,65,99);*/
+    color:rgb(89,127,251);
 }
 
 input[type="text"]:focus {
-    border-bottom: 3px solid rgb(255,65,99);
+    /*border-bottom: 3px solid rgb(255,65,99);*/
+    border-bottom: 3px solid rgb(89,127,251);
 
 }
 
@@ -114,7 +89,8 @@ textarea.form-control {
     outline:0;
     box-shadow:none;
 
-    color: rgb(255,65,99);
+    /*color: rgb(255,65,99);*/
+    color: rgb(89,127,251);
     border: 3px solid black;
 
 }
@@ -124,8 +100,10 @@ textarea.form-control:focus {
     font-size: 23px;
     outline:0;
     box-shadow:none;
-    color: rgb(255,65,99);
-    border: 3px solid rgb(255,65,99);
+    /*color: rgb(255,65,99);*/
+    color: rgb(89,127,251);
+    /*border: 3px solid rgb(255,65,99);*/
+    border: 3px solid rgb(89,127,251);
 
 }
 
@@ -134,7 +112,9 @@ button.btn.btn-none:hover{
     font-size: 23px;
     outline:0;
     box-shadow:none;
-    background: rgb(255,65,99) !important;
+    /*background: rgb(255,65,99) !important;*/
+    background: rgb(89,127,251) !important;
+
     color: black;
     border: 3px solid black;
 }
@@ -146,3 +126,6 @@ button.btn.btn-none {
     color: black;
     border: 3px solid black;
 }
+
+
+
