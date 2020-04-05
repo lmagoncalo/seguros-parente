@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
 import {getPrimaryColorFinal} from "../../../Colors";
 import {getMenuTop, getPadding, getSubMenuTop} from "../../Utils";
+import {Image} from "react-bootstrap";
+import logo from '../../logo.png';
 
 class Footer extends Component {
     render() {
 
         const divMenu_footer = {
             width:"100%",
-            background: getPrimaryColorFinal(),
+            background: 'black',
         };
 
         const menuRect_footer={
-                background: "black",
-                height:"3px",
-                width:"100%",
-                padding:"0",
-                margin:"0",
-                position: "absolute",
+            background: "black",
+            height:"3px",
+            width:"100%",
+            padding:"0",
+            margin:"0",
+            position: "absolute",
         };
 
         const menu_footer={
@@ -24,23 +26,35 @@ class Footer extends Component {
             paddingRight: getPadding(),
             textAlign: 'center',
             color:'white',
-            paddingTop: "80px",
-            paddingBottom: "120px",
+            paddingTop: "50px",
+            paddingBottom: "50px",
             fontFamily: 'Text_Bold',
-            fontSize: "18px",
             letterSpacing: "1px",
+            fontVariant: 'small-caps',
+            fontSize: "15px",
         };
 
-
-        const leftDiv_Footer={
-          width:'50%',
-          float:'left',
-          display:'inline-block',
-        };
-        const rightDiv_Footer={
-            width:'50%',
-            float:'right',
+        const parts_footer={
+            width:'35%',
             display:'inline-block',
+            verticalAlign: 'top',
+        };
+
+        const partsImage_footer={
+            width:'30%',
+            display:'inline-block',
+            verticalAlign: 'top',
+        };
+
+        const text_footer={
+            paddingTop:'10px',
+            // background:'red',
+        };
+
+        const img_footer={
+            width:'50%',
+            textAlign: 'center',
+            //  background:'blue',
         };
 
 
@@ -49,11 +63,14 @@ class Footer extends Component {
                 {/*  <div style={menuRect_footer}/>*/}
 
                 <div style={menu_footer}>
-                    <div style={leftDiv_Footer}>
-                        <div>Avenida do Centro Cívio nº5, <br/>4910-431 Vila Praia de Âncora</div>
+                    <div style={parts_footer}>
+                        <div style={text_footer} >avenida do centro cívio nº<span style={{fontSize:'11px'}}>5, <br/>4910-431</span> vila praia de âncora</div>
                     </div>
-                    <div style={rightDiv_Footer}>
-                        <div>seguros@carlosparente.com  <br/>917 265 180 · 258 404 888</div>
+                    <div style={partsImage_footer}>
+                        <Image style={img_footer} src={logo} />
+                    </div>
+                    <div style={parts_footer}>
+                        <div style={text_footer} >seguros@carlosparente.com  <br/>917 265 180 · 258 404 888</div>
                     </div>
                 </div>
             </div>

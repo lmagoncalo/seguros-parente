@@ -215,13 +215,13 @@ class Simulation extends Component {
                     <Form.Group controlId="formBasicText">
                         <Form.Control style={form_simulation} size="lg" type="text" onChange={this.handleNameChange} />
                         <Form.Text style={formLegend_simulation} className="text-muted">
-                            nome próprio e apelido*
+                            nome próprio e apelido
                         </Form.Text>
                     </Form.Group>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Control style={form_simulation} size="lg" type="email" onChange={this.handleEmailChange} />
                         <Form.Text style={formLegend_simulation} className="text-muted">
-                            email*
+                            email
                         </Form.Text>
                     </Form.Group>
 
@@ -271,17 +271,17 @@ class Simulation extends Component {
                     <h3 style={subTitle_simulation}>data pretendida</h3>
 
                     <div >
-                    <DatePicker
-                        selected={this.state.start_date}
-                        dateFormat="dd/MM/yyyy"
-                        onChange={this.handleStartDateChange}
-                    />
-                    <p style={dateBet_simulation}>—</p>
-                    <DatePicker
-                        selected={this.state.end_date}
-                        dateFormat="dd/MM/yyyy"
-                        onChange={this.handleEndDateChange}
-                    />
+                        <DatePicker
+                            selected={this.state.start_date}
+                            dateFormat="dd/MM/yyyy"
+                            onChange={this.handleStartDateChange}
+                        />
+                        <p style={dateBet_simulation}>—</p>
+                        <DatePicker
+                            selected={this.state.end_date}
+                            dateFormat="dd/MM/yyyy"
+                            onChange={this.handleEndDateChange}
+                        />
                     </div>
                     <h3 style={subTitle_simulation}>mensagem</h3>
 

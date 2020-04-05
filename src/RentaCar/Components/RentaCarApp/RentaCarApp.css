@@ -19,10 +19,10 @@ body {
     font-family: 'Display_Bold_Italic', serif;
 }
 .form-control {
-   /* color:rgb(255,65,99);*/
+    /* color:rgb(255,65,99);*/
     color:rgb(89,127,251);
     border-radius: 0;
- }
+}
 
 input#formBasicText, input#formBasicEmail {
     border: 0;
@@ -107,6 +107,8 @@ textarea.form-control:focus {
 
 }
 
+
+
 button.btn.btn-none:hover{
     border-radius: 0;
     font-size: 23px;
@@ -128,4 +130,29 @@ button.btn.btn-none {
 }
 
 
+.navbar-nav {
+    display: block;
+}
+
+
+
+button.react-button-loaders__btn.sc-EHOje.fuBhhA:hover,button.react-button-loaders__btn.sc-EHOje.fuBhhA {
+    border: 3px solid black;
+    color: black;
+}
+
+.fuBhhA:focus,.fuBhhA {
+    box-shadow:none;
+    background: rgb(89,127,251) !important;
+    color: black;
+    font-family: 'Text_Bold',serif;
+    text-align: center;
+    letter-spacing: 1px;
+    font-variant: small-caps;
+}
+
+.cxhzGU {
+    font-size: 18px !important;
+    width: 100%;
+}
 

@@ -36,9 +36,19 @@ class RentaCarApp extends Component{
             fontVariant: "small-caps",
             color: getTextColor(),
             fontFamily: "Text_Bold",
-            fontSize: "14px",
+            fontSize: "18px",
             letterSpacing: "1.5px",
-            marginLeft:"6px"
+            marginLeft:"6px",
+            float:'right'
+        };
+
+        const nav_bar_voltar={
+            fontVariant: "small-caps",
+            color: getTextColor(),
+            fontFamily: "Text_Bold",
+            fontSize: "18px",
+            letterSpacing: "1.5px",
+            float:"left",
         };
 
         const divMenu_app = {
@@ -51,38 +61,42 @@ class RentaCarApp extends Component{
         };
 
         const menu_app = {
+            width:'100%',
+            paddingLeft:getPadding(),
+            paddingRight:getPadding(),
             margin:"0",
             fontSize: "15px",
             marginTop: "20px",
-            paddingRight: getPadding(),
+            float:'right',
         };
 
-    return (
-        <div>
-            <Navbar collapseOnSelect expand="lg" sticky="top"  style={divMenu_app}>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav"style={{borderWidth: "0px"}} />
-                <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
-                    <Nav style={menu_app} >
-                        <Nav.Link style={nav_bar} onClick={() => this.setSelected('home')} href="#home">SOBRE NÓS {this.isSelected('home') ? <hr style={line_class} /> : <div/>} </Nav.Link>
-                        <Nav.Link style={nav_bar} onClick={() => this.setSelected('classes')} href="#classes">FROTA {this.isSelected('classes') ? <hr style={line_class} /> : <div/>}</Nav.Link>
-                        <Nav.Link style={nav_bar} onClick={() => this.setSelected('simulation')} href="#simulation">PEDIR SIMULAÇÃO {this.isSelected('simulation') ? <hr style={line_class} /> : <div/>}</Nav.Link>
-                    </Nav>
-                </Navbar.Collapse>
-            </Navbar>
+        return (
+            <div>
+                <Navbar collapseOnSelect expand="lg" sticky="top"  style={divMenu_app}>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{borderWidth: "0px"}} />
+                    <Navbar.Collapse id="responsive-navbar-nav" >
+                        <Nav style={menu_app}>
+                            <Nav.Link style={nav_bar_voltar} href="/">voltar</Nav.Link>
+                            <Nav.Link style={nav_bar} onClick={() => this.setSelected('simulation')} href="#simulation">pedir simulação{this.isSelected('simulation') ? <hr style={line_class} /> : <div/>}</Nav.Link>
+                            <Nav.Link style={nav_bar} onClick={() => this.setSelected('classes')} href="#classes">frota{this.isSelected('classes') ? <hr style={line_class} /> : <div/>}</Nav.Link>
+                            <Nav.Link style={nav_bar} onClick={() => this.setSelected('home')} href="#home">sobre nós{this.isSelected('home') ? <hr style={line_class} /> : <div/>} </Nav.Link>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Navbar>
 
-            <div id='home'>
-                <Home name="home"/>
+                <div id='home'>
+                    <Home name="home"/>
+                </div>
+                <div id='classes'>
+                    <Classes name="classes"/>
+                </div>
+                <div id='simulation'>
+                    <Simulation name="simulation"/>
+                </div>
+                <Footer/>
             </div>
-            <div id='classes'>
-                <Classes name="classes"/>
-            </div>
-            <div id='simulation'>
-                <Simulation name="simulation"/>
-            </div>
-            <Footer/>
-        </div>
-    );
-}
+        );
+    }
 }
 
 export default RentaCarApp;
