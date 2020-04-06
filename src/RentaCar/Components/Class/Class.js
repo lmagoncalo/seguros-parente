@@ -16,7 +16,7 @@ class Class extends Component {
 
         const menu_class={
             paddingLeft:getPadding(),
-            paddingRight:getPadding()
+            paddingRight:getPadding(),
         };
 
         const divSubTitle_class={
@@ -49,7 +49,7 @@ class Class extends Component {
             margin:'0',
             position: "relative",
             float: "left",
-            width:"40%",
+            width:"45%",
         };
 
         const info_text_class={
@@ -57,7 +57,7 @@ class Class extends Component {
             marginRight:"10x",
             marginBottom: 0,
             fontSize: "23px",
-            fontFamily: "Text_Regular"
+            fontFamily: "Text_Regular",
         };
 
         const icon_class={
@@ -76,7 +76,7 @@ class Class extends Component {
         const divImage_class={
            // float:this.state.title_orientation
             float:"right",
-            width:"60%",
+            width:"55%",
             marginBottom:getSubMenuTop(),
             //backgroundColor:"rgba(255,0,0,0.5)"
         };
