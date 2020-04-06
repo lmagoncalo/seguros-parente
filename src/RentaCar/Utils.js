@@ -3,7 +3,7 @@ export function getClasses() {
         {
             id: 1,
             name: 'pequenos utilitários',
-            seats: 5,
+            seats: 4,
             space: 2,
             air_conditioning : 'A/C manual',
             gear: 'cx manual',
@@ -27,7 +27,7 @@ export function getClasses() {
             name: 'utilitários económicos',
             seats: 5,
             space: 2,
-            air_conditioning : 'A/C manual',
+            air_conditioning : 'A/C manual/ automático',
             gear: 'cx manual/ automático',
             doors: 5,
             fuel: 'diesel',
@@ -38,8 +38,8 @@ export function getClasses() {
             name: 'carrinhas',
             seats: 5,
             space: 3,
-            air_conditioning : 'A/C manual',
-            gear: 'cx manual',
+            air_conditioning : 'A/C manual/ automático',
+            gear: 'cx manual/ automático',
             doors: 5,
             fuel: 'diesel',
             src:require('./cars/carrinhas.png')
@@ -47,11 +47,11 @@ export function getClasses() {
         {
             id: 5,
             name: 'monovolumes',
-            seats: 5,
+            seats: 7,
             space: 4,
             air_conditioning : 'A/C automático',
-            gear: 'cx manual',
-            doors: 7,
+            gear: 'cx manual/ automático',
+            doors: 5,
             fuel: 'diesel',
             src:require('./cars/monovolumes.png')
         },
