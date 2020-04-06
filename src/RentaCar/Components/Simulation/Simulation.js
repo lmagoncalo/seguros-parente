@@ -16,7 +16,7 @@ class Simulation extends Component {
         this.state = {
             name: '',
             email: '',
-            car_type: '',
+            car_types: [],
             message: '',
             start_date: null,
             end_date: null,
@@ -25,6 +25,7 @@ class Simulation extends Component {
             alert: '',
             sendState: ''
         };
+
         this.handleNameChange = this.handleNameChange.bind(this);
         this.handleEmailChange = this.handleEmailChange.bind(this);
         this.handleCarTypeChange = this.handleCarTypeChange.bind(this);
@@ -47,7 +48,15 @@ class Simulation extends Component {
     }
 
     handleCarTypeChange (evt) {
-        this.setState({ car_type: evt.target.value });
+        let new_car_type = evt.target.value;
+        let car_types = this.state.car_types;
+        if(car_types.includes(new_car_type)){
+            const index = car_types.indexOf(new_car_type);
+            car_types.splice(index, 1);
+        } else {
+            car_types.push(new_car_type)
+        }
+        this.setState({ car_types: car_types });
     }
 
     handleMessageChange (evt) {
@@ -71,10 +80,7 @@ class Simulation extends Component {
         if(!this.state.email.trim()){
             return false;
         }
-        if(!this.state.car_type.trim()){
-            return false;
-        }
-        if(!this.state.message.trim()){
+        if(this.state.car_types.length === 0){
             return false;
         }
         if(this.state.start_date == null){
@@ -114,7 +120,6 @@ class Simulation extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        event.target.reset();
 
         if(this.checkForms()){
             // Start loading
@@ -126,11 +131,12 @@ class Simulation extends Component {
             this.setState({start_date: null});
             this.setState({end_date: null});
 
-            const email = createEmail(this.state.email, this.state.name, this.state.car_type, formatted_start_date, formatted_end_date, this.state.message);
+            const email = createEmail(this.state.email, this.state.name, this.state.car_types, formatted_start_date, formatted_end_date, this.state.message);
             axios
                 .post('https://rentacar-backoffice.herokuapp.com/rentacar/email', email)
                 .then((result) => {
                     this.createSuccess();
+                    event.target.reset();
                 })
                 .catch(err => {
                     this.createError('O e-mail não foi enviado!');
@@ -207,11 +213,18 @@ class Simulation extends Component {
             boxShadow: "none",
         };
 
+        const infoObri_simulation={
+            fontFamily: 'Text_Bold',
+            fontVariant: "small-caps",
+            fontSize: "13px",
+            letterSpacing: "1px",
+        };
+
         return (
             <div>
                 <Title name={"Pedir simulação"}/>
                 <Form style={menu_simulation} onSubmit={this.handleSubmit}>
-                    <h3 style={subTitle_simulation}>informações de contacto</h3>
+                    <h3 style={subTitle_simulation}>informações de contacto*</h3>
                     <Form.Group controlId="formBasicText">
                         <Form.Control style={form_simulation} size="lg" type="text" onChange={this.handleNameChange} />
                         <Form.Text style={formLegend_simulation} className="text-muted">
@@ -225,7 +238,7 @@ class Simulation extends Component {
                         </Form.Text>
                     </Form.Group>
 
-                    <h3 style={subTitle_simulation}>tipo de veículo</h3>
+                    <h3 style={subTitle_simulation}>tipo de veículo*</h3>
                     <Form.Group onChange={this.handleCarTypeChange} style={ratio_simulation}>
                         <Col sm={10} style={simulation_left}>
                             <Form.Check
@@ -268,19 +281,21 @@ class Simulation extends Component {
                         </Col>
                     </Form.Group>
 
-                    <h3 style={subTitle_simulation}>data pretendida</h3>
+                    <h3 style={subTitle_simulation}>data pretendida*</h3>
 
                     <div >
                         <DatePicker
                             selected={this.state.start_date}
                             dateFormat="dd/MM/yyyy"
                             onChange={this.handleStartDateChange}
+                            placeholderText="DD/MM/YYYY"
                         />
                         <p style={dateBet_simulation}>—</p>
                         <DatePicker
                             selected={this.state.end_date}
                             dateFormat="dd/MM/yyyy"
                             onChange={this.handleEndDateChange}
+                            placeholderText="DD/MM/YYYY"
                         />
                     </div>
                     <h3 style={subTitle_simulation}>mensagem</h3>
@@ -288,6 +303,8 @@ class Simulation extends Component {
                     <Form.Group>
                         <Form.Control as="textarea" rows="4" onChange={this.handleMessageChange} />
                     </Form.Group>
+
+                    <p style={infoObri_simulation}>* campos de preenchimento obrigatório</p>
 
                     <Button style={submitBtn_simulation} type="submit" state={this.state.sendState}>
                         submeter pedido

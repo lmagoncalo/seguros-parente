@@ -9,7 +9,7 @@ class Home extends Component {
             paddingRight: getPadding(),
             paddingTop: getMenuTop(),
             paddingBottom: getMenuTop(),
-        }
+        };
 
         const title_home={
             fontFamily: 'Display_Medium',

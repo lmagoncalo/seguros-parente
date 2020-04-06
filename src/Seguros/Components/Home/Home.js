@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {getPadding, getTitleSize,getMenuTop} from "../../Utils";
-import Row from "react-bootstrap/Row";
 
 class Home extends Component {
     render() {

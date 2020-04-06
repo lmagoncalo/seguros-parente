@@ -14,16 +14,6 @@ class Class extends Component {
             margin:'0',
         };
 
-         const menu_rect={
-             background: "black",
-             height:"3px",
-             width:"100%",
-             padding:"0",
-             margin:"0",
-             position: "absolute",
-             //backgroundImage: "linear-gradient("+getPrimaryColorFinal()+ ", rgba("+getPrimaryColor()+",0.6),rgba("+getPrimaryColor()+",0.3), rgba("+getPrimaryColor()+",0.1), rgba("+getPrimaryColor()+",0) )",
-         };
-
         const menu_class={
             paddingLeft:getPadding(),
             paddingRight:getPadding()
@@ -95,7 +85,6 @@ class Class extends Component {
 
         return (
             <div style={total_class}>
-                {/* <div style={menu_rect}/>*/}
                 <div style={menu_class}>
 
                     <div style={divSubTitle_class}>

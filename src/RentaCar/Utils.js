@@ -58,42 +58,11 @@ export function getClasses() {
     ]
 }
 
-export function createEmail(email, name, car_type, start_date, end_date, message) {
-    /*
-    let string = "";
-
-    string += "Nome: " + name + "<br/>";
-    string += "Email: " + email + "<br/>";
-    let car_name;
-    switch (car_type) {
-        case "1":
-            car_name = "Pequeno utilitário";
-            break;
-        case "2":
-            car_name = "Utilitário";
-            break;
-        case "3":
-            car_name = "Utilitário económico";
-            break;
-        case "4":
-            car_name = "Carrinha";
-            break;
-        case "5":
-            car_name = "Monovolume";
-            break;
-        default:
-            break
-    }
-    string += "Tipo de carro: " + car_name + "<br/>";
-    string += "Data: " + start_date + " até " + end_date + "<br/>";
-    string += "Mensagem: " + message + "<br/>";
-
-    return string;
-     */
+export function createEmail(email, name, car_types, start_date, end_date, message) {
     const obj = {};
     obj['name'] = name;
     obj['email'] = email;
-    obj['car_type'] = car_type;
+    obj['car_types'] = car_types.join(',');
     obj['start_date'] = start_date;
     obj['end_date'] = end_date;
     obj['message'] = message;

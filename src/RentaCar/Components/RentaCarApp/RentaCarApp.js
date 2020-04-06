@@ -5,7 +5,7 @@ import Classes from "../Classes/Classes";
 import Simulation from "../Simulation/Simulation";
 import Footer from "../Footer/Footer";
 import {Nav, Navbar} from "react-bootstrap";
-import {getTextColor,getPrimaryColorFinal,getPrimaryColor,getMenuColorFinal,getMenuColor} from "../../../Colors";
+import {getTextColor,getPrimaryColorFinal,getPrimaryColor} from "../../../Colors";
 import {getPadding} from "../../Utils";
 
 class RentaCarApp extends Component{
@@ -52,12 +52,18 @@ class RentaCarApp extends Component{
         };
 
         const divMenu_app = {
-            backgroundImage: "linear-gradient(rgba("+getPrimaryColor()+ ",1), rgba("+getPrimaryColor()+",0.6),rgba("+getPrimaryColor()+",0.3), rgba("+getPrimaryColor()+",0.1), rgba("+getPrimaryColor()+",0) )",
+           // backgroundImage: "linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.6),rgba(0,0,0,0.3), rgba(0,0,0,0.1), rgba(0,0,0,0) )",
+            //backgroundImage: "linear-gradient(rgba("+getPrimaryColor()+ ",1), rgba("+getPrimaryColor()+",0.6),rgba("+getPrimaryColor()+",0.3), rgba("+getPrimaryColor()+",0.1), rgba("+getPrimaryColor()+",0) )",
+            backgroundImage: "linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0.6),rgba(255,255,255,0) )",
+
+           backgroundColor:'white',
             borderWidth:"0px",
             margin:"0",
             width:"100%",
             padding:"0",
+           // paddingBottom:"20px",
             paddingBottom:"20px"
+
         };
 
         const menu_app = {
@@ -68,6 +74,13 @@ class RentaCarApp extends Component{
             fontSize: "15px",
             marginTop: "20px",
             float:'right',
+        };
+
+        const rect_black={
+            width:'100%',
+            margin:'0',
+            height:'2px',
+            background:'black'
         };
 
         return (

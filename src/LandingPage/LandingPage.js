@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import './LandingPage.css'
 import {getPrimaryColorFinal} from "../Colors";
-import {getMenuTop, getPadding, getTitleSize} from "../RentaCar/Utils";
+import {getMenuTop, getPadding} from "../RentaCar/Utils";
 
 class LandingPage extends Component{
     render() {
