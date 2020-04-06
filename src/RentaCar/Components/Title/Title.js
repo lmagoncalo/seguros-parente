@@ -26,7 +26,7 @@ class Title extends Component{
         };
 
         return (
-            <div>
+            <div id="title">
                 <div style={retWhite_title} />
                 <div style={menu_title}>
                     <Col style={title_title}>· {this.props.name} ·</Col>

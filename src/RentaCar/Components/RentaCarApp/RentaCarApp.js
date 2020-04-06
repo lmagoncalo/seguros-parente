@@ -5,7 +5,7 @@ import Classes from "../Classes/Classes";
 import Simulation from "../Simulation/Simulation";
 import Footer from "../Footer/Footer";
 import {Nav, Navbar} from "react-bootstrap";
-import {getTextColor,getPrimaryColorFinal,getPrimaryColor} from "../../../Colors";
+import {getTextColor,getPrimaryColorFinal} from "../../../Colors";
 import {getPadding} from "../../Utils";
 
 class RentaCarApp extends Component{
@@ -13,7 +13,11 @@ class RentaCarApp extends Component{
         super(props);
         this.state = {
             name: 'home',
+            height: 0
         };
+        this.homeRef = React.createRef();
+        this.classesRef = React.createRef();
+        this.simulationRef = React.createRef();
     }
 
     setSelected(new_name){
@@ -22,10 +26,16 @@ class RentaCarApp extends Component{
 
     isSelected(new_name){
         return this.state.name === new_name;
+    }
 
+    componentDidMount() {
+        const height = document.getElementById('title').clientHeight;
+        this.setState({ height: height });
     }
 
     render() {
+        const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop - (this.state.height / 2));
+
         const line_class={
             margin: "auto",
             marginTop: "6px",
@@ -76,13 +86,6 @@ class RentaCarApp extends Component{
             float:'right',
         };
 
-        const rect_black={
-            width:'100%',
-            margin:'0',
-            height:'2px',
-            background:'black'
-        };
-
         return (
             <div>
                 <Navbar collapseOnSelect expand="lg" sticky="top"  style={divMenu_app}>
@@ -90,20 +93,20 @@ class RentaCarApp extends Component{
                     <Navbar.Collapse id="responsive-navbar-nav" >
                         <Nav style={menu_app}>
                             <Nav.Link style={nav_bar_voltar} href="/">voltar</Nav.Link>
-                            <Nav.Link style={nav_bar} onClick={() => this.setSelected('simulation')} href="#simulation">pedir simulação{this.isSelected('simulation') ? <hr style={line_class} /> : <div/>}</Nav.Link>
-                            <Nav.Link style={nav_bar} onClick={() => this.setSelected('classes')} href="#classes">frota{this.isSelected('classes') ? <hr style={line_class} /> : <div/>}</Nav.Link>
-                            <Nav.Link style={nav_bar} onClick={() => this.setSelected('home')} href="#home">sobre nós{this.isSelected('home') ? <hr style={line_class} /> : <div/>} </Nav.Link>
+                            <Nav.Link style={nav_bar} onClick={() => {this.setSelected('simulation'); scrollToRef(this.simulationRef); }} >pedir simulação{this.isSelected('simulation') ? <hr style={line_class} /> : <div/>}</Nav.Link>
+                            <Nav.Link style={nav_bar} onClick={() => {this.setSelected('classes'); scrollToRef(this.classesRef); }} >frota{this.isSelected('classes') ? <hr style={line_class} /> : <div/>}</Nav.Link>
+                            <Nav.Link style={nav_bar} onClick={() => {this.setSelected('home'); scrollToRef(this.homeRef); }} >sobre nós{this.isSelected('home') ? <hr style={line_class} /> : <div/>} </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
 
-                <div id='home'>
+                <div ref={this.homeRef} id='home'>
                     <Home name="home"/>
                 </div>
-                <div id='classes'>
+                <div ref={this.classesRef} id='classes'>
                     <Classes name="classes"/>
                 </div>
-                <div id='simulation'>
+                <div ref={this.simulationRef} id='simulation'>
                     <Simulation name="simulation"/>
                 </div>
                 <Footer/>
