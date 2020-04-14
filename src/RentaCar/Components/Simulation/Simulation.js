@@ -93,7 +93,7 @@ class Simulation extends Component {
     }
 
     createError(errorMessage){
-        this.setState({sendState: 'finished'});
+        this.setState({sendState: ''});
 
         let new_color = 'danger';
         this.setState({ show: !this.state.show, color: new_color, alert: errorMessage });
@@ -106,7 +106,7 @@ class Simulation extends Component {
     }
 
     createSuccess(){
-        this.setState({sendState: 'finished'});
+        this.setState({sendState: ''});
 
         let new_color = 'success';
         let new_alert = 'O e-mail foi enviado com sucesso.';
@@ -114,7 +114,6 @@ class Simulation extends Component {
 
         this.timeoutId = setTimeout(function () {
             this.setState({show: false});
-            this.setState({sendState: ''});
         }.bind(this), 5000);
     }
 
@@ -142,7 +141,7 @@ class Simulation extends Component {
                     this.createError('O e-mail não foi enviado!');
                 });
         } else {
-            this.createError('É necessário preencher todos os campos!');
+            this.createError('É necessário preencher todos os campos obrigatórios!');
         }
 
 
