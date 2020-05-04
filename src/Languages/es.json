@@ -1,0 +1,45 @@
+{
+	"nav": {
+		"back": "volver",
+		"aboutus": "sobre nosotros",
+		"fleet": "flota",
+		"simulation": "pedir simulación"
+	},
+	"home": {
+		"title": " ya tiene ",
+		"info1": "Somos los primeros ",
+		"info2": " de Vila Praia de Âncora. Tenemos cerca de diez vehículos a su disposición con diferentes características y precios por día. ¡Ven a conocer nuestra flota!"
+	},
+	"class": {
+		"seats": " asientos",
+		"suitcases": " maletas",
+		"doors": " puertas",
+		"gear_ma": "caja manual/ automática",
+		"gear_m": "caja manual",
+		"diesel": "diésel",
+		"gasoline": "gasolina",
+		"ac_m": "A/AC manual",
+		"ac_ma": "A/AC manual/ automático",
+		"ac_a": "A/AC automático"
+	},
+	"classes": "Nuestra flota",
+	"simulation": {
+		"title": "Solicitar simulación",
+		"title2": "información de contacto*",
+		"title3": "tipo de vehículo*",
+		"title4": "fecha deseada*",
+		"title5": "mensaje",
+		"name": "nombre y apellido",
+		"email": "email",
+		"type1": "pequeño",
+		"type2": "compacto",
+		"type3": "económico",
+		"type4": "familiares",
+		"type5": "monovolumen",
+		"required": "* campos obligatorios",
+		"submit": "enviar solicitud",
+		"success_alert": "El correo electrónico ha sido enviado.",
+		"bad_alert": "¡No se envió el correo electrónico!",
+		"required_alert": "¡Es necesario completar todos los campos obligatorios!"
+	}
+}

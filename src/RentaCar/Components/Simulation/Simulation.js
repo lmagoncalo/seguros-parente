@@ -8,6 +8,7 @@ import ptBR from "date-fns/locale/pt-BR";
 import { format } from 'date-fns'
 import axios from 'axios';
 import { Rabbit as Button } from 'react-button-loaders'
+import {translate} from "../../../Languages/Language_Handler";
 
 
 class Simulation extends Component {
@@ -109,7 +110,7 @@ class Simulation extends Component {
         this.setState({sendState: ''});
 
         let new_color = 'success';
-        let new_alert = 'O e-mail foi enviado com sucesso.';
+        let new_alert = translate("simulation.success_alert");
         this.setState({ show: !this.state.show, color: new_color, alert: new_alert });
 
         this.timeoutId = setTimeout(function () {
@@ -138,10 +139,10 @@ class Simulation extends Component {
                     event.target.reset();
                 })
                 .catch(err => {
-                    this.createError('O e-mail não foi enviado!');
+                    this.createError(translate("simulation.bad_alert"));
                 });
         } else {
-            this.createError('É necessário preencher todos os campos obrigatórios!');
+            this.createError(translate("simulation.required_alert"));
         }
 
 
@@ -221,42 +222,42 @@ class Simulation extends Component {
 
         return (
             <div>
-                <Title name={"Pedir simulação"}/>
+                <Title name={translate("simulation.title")}/>
                 <Form style={menu_simulation} onSubmit={this.handleSubmit}>
-                    <h3 style={subTitle_simulation}>informações de contacto*</h3>
+                    <h3 style={subTitle_simulation}> {translate("simulation.title2")} </h3>
                     <Form.Group controlId="formBasicText">
                         <Form.Control style={form_simulation} size="lg" type="text" onChange={this.handleNameChange} />
                         <Form.Text style={formLegend_simulation} className="text-muted">
-                            nome próprio e apelido
+                            {translate("simulation.name")}
                         </Form.Text>
                     </Form.Group>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Control style={form_simulation} size="lg" type="email" onChange={this.handleEmailChange} />
                         <Form.Text style={formLegend_simulation} className="text-muted">
-                            email
+                            {translate("simulation.email")}
                         </Form.Text>
                     </Form.Group>
 
-                    <h3 style={subTitle_simulation}>tipo de veículo*</h3>
+                    <h3 style={subTitle_simulation}> {translate("simulation.title3")} </h3>
                     <Form.Group onChange={this.handleCarTypeChange} style={ratio_simulation}>
                         <Col sm={10} style={simulation_left}>
                             <Form.Check
                                 type="checkbox"
-                                label="Pequenos Utilitários"
+                                label={translate("simulation.type1")}
                                 name="formHorizontalRadios"
                                 id="formHorizontalRadios1"
                                 value="1"
                             />
                             <Form.Check
                                 type="checkbox"
-                                label="Utilitários"
+                                label={translate("simulation.type2")}
                                 name="formHorizontalRadios"
                                 id="formHorizontalRadios2"
                                 value="2"
                             />
                             <Form.Check
                                 type="checkbox"
-                                label="Utilitários Económicos"
+                                label={translate("simulation.type3")}
                                 name="formHorizontalRadios"
                                 id="formHorizontalRadios3"
                                 value="3"
@@ -265,14 +266,14 @@ class Simulation extends Component {
                         <Col sm={10} style={simulation_right}>
                             <Form.Check
                                 type="checkbox"
-                                label="Carrinhas"
+                                label={translate("simulation.type4")}
                                 name="formHorizontalRadios"
                                 id="formHorizontalRadios4"
                                 value="4"
                             />
                             <Form.Check
                                 type="checkbox"
-                                label="Monovolumes"
+                                label={translate("simulation.type5")}
                                 name="formHorizontalRadios"
                                 id="formHorizontalRadios5"
                                 value="5"
@@ -280,7 +281,7 @@ class Simulation extends Component {
                         </Col>
                     </Form.Group>
 
-                    <h3 style={subTitle_simulation}>data pretendida*</h3>
+                    <h3 style={subTitle_simulation}> {translate("simulation.title4")} </h3>
 
                     <div >
                         <DatePicker
@@ -297,16 +298,16 @@ class Simulation extends Component {
                             placeholderText="DD/MM/YYYY"
                         />
                     </div>
-                    <h3 style={subTitle_simulation}>mensagem</h3>
+                    <h3 style={subTitle_simulation}> {translate("simulation.title5")} </h3>
 
                     <Form.Group>
                         <Form.Control as="textarea" rows="4" onChange={this.handleMessageChange} />
                     </Form.Group>
 
-                    <p style={infoObri_simulation}>* campos de preenchimento obrigatório</p>
+                    <p style={infoObri_simulation}>{translate("simulation.required")}</p>
 
                     <Button style={submitBtn_simulation} type="submit" state={this.state.sendState}>
-                        submeter pedido
+                        {translate("simulation.submit")}
                     </Button>
                     <Alert variant={this.state.color} show={this.state.show}>
                         {this.state.alert}

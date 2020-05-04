@@ -1,0 +1,46 @@
+{
+	"nav": {
+		"back": "voltar",
+		"aboutus": "sobre nós",
+		"fleet": "frota",
+		"simulation": "pedir simulação"
+	},
+	"home": {
+		"title": " já tem ",
+		"info1": "Somos o primeiro ",
+		"info2": " de Vila Praia de Âncora. Temos cerca de dez veículos ao seu dispor com diferentes características e preços ao dia. Venha conhecer a nossa frota!"
+	},
+	"class": {
+		"seats": " lugares",
+		"suitcases": " malas",
+		"doors": " portas",
+		"gear_ma": "cx manual/ automático",
+		"gear_m": "cx manual",
+		"diesel": "gasóleo",
+		"gasoline": "gasolina",
+		"ac_m": "A/C manual",
+		"ac_ma": "A/C manual/ automático",
+		"ac_a": "A/C automático"
+	},
+	"classes": "A nossa frota"
+	,
+	"simulation": {
+		"title": "Pedir simulação",
+		"title2": "informações de contacto*",
+		"title3": "tipo de veículo*",
+		"title4": "data pretendida*",
+		"title5": "mensagem",
+		"name": "nome próprio e apelido",
+		"email": "email",
+		"type1": "pequenos Utilitários",
+		"type2": "utilitários",
+		"type3": "utilitários Económicos",
+		"type4": "carrinhas",
+		"type5": "monovolumes",
+		"required": "* campos de preenchimento obrigatório",
+		"submit": "submeter pedido",
+		"success_alert": "O e-mail foi enviado com sucesso.",
+		"bad_alert": "O e-mail não foi enviado!",
+		"required_alert": "É necessário preencher todos os campos obrigatórios!"
+	}
+}

@@ -1,63 +1,3 @@
-export function getClasses() {
-    return [
-        {
-            id: 1,
-            name: 'pequenos utilitários',
-            seats: 4,
-            space: 2,
-            air_conditioning : 'A/C manual',
-            gear: 'cx manual',
-            doors: 5,
-            fuel: 'gasolina',
-            src:require('./cars/pequenos_utilitarios.png')
-        },
-        {
-            id: 2,
-            name: 'utilitários',
-            seats: 5,
-            space: 2,
-            air_conditioning : 'A/C manual',
-            gear: 'cx manual',
-            doors: 5,
-            fuel: 'gasolina',
-            src:require('./cars/utilitarios.png')
-        },
-        {
-            id: 3,
-            name: 'utilitários económicos',
-            seats: 5,
-            space: 2,
-            air_conditioning : 'A/C manual/ automático',
-            gear: 'cx manual/ automático',
-            doors: 5,
-            fuel: 'diesel',
-            src:require('./cars/utilitarios_economicos.png')
-        },
-        {
-            id: 4,
-            name: 'carrinhas',
-            seats: 5,
-            space: 3,
-            air_conditioning : 'A/C manual/ automático',
-            gear: 'cx manual/ automático',
-            doors: 5,
-            fuel: 'diesel',
-            src:require('./cars/carrinhas.png')
-        },
-        {
-            id: 5,
-            name: 'monovolumes',
-            seats: 7,
-            space: 4,
-            air_conditioning : 'A/C automático',
-            gear: 'cx manual/ automático',
-            doors: 5,
-            fuel: 'diesel',
-            src:require('./cars/monovolumes.png')
-        },
-    ]
-}
-
 export function createEmail(email, name, car_types, start_date, end_date, message) {
     const obj = {};
     obj['name'] = name;
@@ -83,7 +23,7 @@ export function getSubMenuTop() {
 }
 
 export function getTitleSize() {
-    return '64px';
+    return '60px';
 }
 
 export function getIcons(color){

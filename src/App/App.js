@@ -3,7 +3,7 @@ import './App.css';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import SegurosApp from "../Seguros/Components/SegurosApp/SegurosApp";
 import LandingPage from "../LandingPage/LandingPage";
-import RentaCarApp from "../RentaCar/Components/RentaCarApp/RentaCarApp";
+import RentACarApp from "../RentaCar/Components/RentaCarApp/RentACarApp";
 
 export default function App() {
     return (
@@ -12,7 +12,7 @@ export default function App() {
         renders the first one that matches the current URL. */}
             <Switch>
                 <Route path="/rentacar">
-                    <RentaCarApp />
+                    <RentACarApp />
                 </Route>
                 <Route path="/seguros">
                     <SegurosApp />

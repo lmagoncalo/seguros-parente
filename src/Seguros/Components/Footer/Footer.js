@@ -55,7 +55,7 @@ class Footer extends Component {
             <div style={divMenu_footer}>
                 <div style={menu_footer}>
                     <div style={parts_footer}>
-                        <div style={text_footer} >avenida do centro cívio nº<span style={numbers_footer}>5, <br/>4910-431</span> vila praia de âncora</div>
+                        <div style={text_footer} >avenida do centro cívico nº<span style={numbers_footer}>5, <br/>4910-431</span> vila praia de âncora</div>
                     </div>
                     <div style={partsImage_footer}>
                         <Image style={img_footer} src={logo} />

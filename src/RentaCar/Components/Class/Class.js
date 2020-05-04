@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Image} from "react-bootstrap";
 import {getIcons, getPadding, getSubMenuTop} from "../../Utils";
+import {translate} from "../../../Languages/Language_Handler";
 
 class Class extends Component {
     constructor(props) {
@@ -64,7 +65,6 @@ class Class extends Component {
             width:"22px",
             display:"inline-block",
             marginRight:"10px",
-           // backgroundColor:"rgba(255,0,0,1)",
             paddingTop:"0",
             paddingBottom: "10px"
         };
@@ -74,21 +74,21 @@ class Class extends Component {
         };
 
         const divImage_class={
-           // float:this.state.title_orientation
             float:"right",
             width:"55%",
             marginBottom:getSubMenuTop(),
-            //backgroundColor:"rgba(255,0,0,0.5)"
         };
 
         let icons = getIcons(this.state.color);
+
+        console.log("classes." + this.state.class.name);
 
         return (
             <div style={total_class}>
                 <div style={menu_class}>
 
                     <div style={divSubTitle_class}>
-                        <h3 style={subTitle_class}>{this.state.class.name}
+                        <h3 style={subTitle_class}> {translate("simulation." + this.state.class.name)}
                             <hr style={line_class} />
                         </h3>
 
@@ -96,27 +96,27 @@ class Class extends Component {
                      <ul style={info_class}>
                          <li>
                             <Image style={icon_class} src={icons[0]} />
-                             <p style={info_text_class}>{this.state.class.seats} lugares</p>
+                             <p style={info_text_class}> {this.state.class.seats} {translate("class.seats")} </p>
                          </li>
                          <li>
                              <Image style={icon_class} src={icons[1]} />
-                             <p style={info_text_class}>{this.state.class.space} malas</p>
+                             <p style={info_text_class}> {this.state.class.space} {translate("class.suitcases")} </p>
                          </li>
                          <li>
                              <Image style={icon_class} src={icons[2]} />
-                             <p style={info_text_class}>{this.state.class.air_conditioning}</p>
+                             <p style={info_text_class}> {translate("class." + this.state.class.air_conditioning)} </p>
                          </li>
                          <li>
                              <Image style={icon_class} src={icons[3]} />
-                             <p style={info_text_class}>{this.state.class.gear}</p>
+                             <p style={info_text_class}> {translate("class." + this.state.class.gear)} </p>
                          </li>
                          <li>
                              <Image style={icon_class}src={icons[4]} />
-                             <p style={info_text_class}>{this.state.class.doors} portas</p>
+                             <p style={info_text_class}> {this.state.class.doors} {translate("class.doors")} </p>
                          </li>
                          <li>
                              <Image style={icon_class} src={icons[5]} />
-                             <p style={info_text_class}>{this.state.class.fuel}</p>
+                             <p style={info_text_class}> {translate("class." + this.state.class.fuel)} </p>
                          </li>
                      </ul>
                 <div style={divImage_class}>

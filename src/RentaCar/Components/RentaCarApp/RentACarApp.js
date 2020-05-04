@@ -7,18 +7,32 @@ import Footer from "../Footer/Footer";
 import {Nav, Navbar} from "react-bootstrap";
 import {getTextColor,getPrimaryColorFinal} from "../../../Colors";
 import {getPadding} from "../../Utils";
+import {getLanguage, getLanguageName, setLanguage, translate} from "../../../Languages/Language_Handler";
+import Dropdown from "react-bootstrap/Dropdown";
 
-class RentaCarApp extends Component{
+
+class RentACarApp extends Component{
     constructor(props) {
         super(props);
         this.state = {
             name: 'home',
-            height: 0
+            height: 0,
+            lang_name: getLanguageName()
         };
         this.homeRef = React.createRef();
         this.classesRef = React.createRef();
         this.simulationRef = React.createRef();
+        this.handleSetLanguage = this.handleSetLanguage.bind(this)
     }
+
+    handleSetLanguage = event => {
+        let lang = event.target.innerHTML.toLowerCase();
+        if (lang !== null && lang !== getLanguage()) {
+            console.log(lang);
+            setLanguage(lang);
+            this.setState({lang_name: getLanguageName()});
+        }
+    };
 
     setSelected(new_name){
         this.setState({name: new_name})
@@ -62,16 +76,13 @@ class RentaCarApp extends Component{
         };
 
         const divMenu_app = {
-           // backgroundImage: "linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.6),rgba(0,0,0,0.3), rgba(0,0,0,0.1), rgba(0,0,0,0) )",
-            //backgroundImage: "linear-gradient(rgba("+getPrimaryColor()+ ",1), rgba("+getPrimaryColor()+",0.6),rgba("+getPrimaryColor()+",0.3), rgba("+getPrimaryColor()+",0.1), rgba("+getPrimaryColor()+",0) )",
             backgroundImage: "linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0.6),rgba(255,255,255,0) )",
 
-           backgroundColor:'white',
+            backgroundColor:'white',
             borderWidth:"0px",
             margin:"0",
             width:"100%",
             padding:"0",
-           // paddingBottom:"20px",
             paddingBottom:"20px"
 
         };
@@ -92,10 +103,23 @@ class RentaCarApp extends Component{
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{borderWidth: "0px"}} />
                     <Navbar.Collapse id="responsive-navbar-nav" >
                         <Nav style={menu_app}>
-                            <Nav.Link style={nav_bar_voltar} href="/">voltar</Nav.Link>
-                            <Nav.Link style={nav_bar} onClick={() => {this.setSelected('simulation'); scrollToRef(this.simulationRef); }} >pedir simulação{this.isSelected('simulation') ? <hr style={line_class} /> : <div/>}</Nav.Link>
-                            <Nav.Link style={nav_bar} onClick={() => {this.setSelected('classes'); scrollToRef(this.classesRef); }} >frota{this.isSelected('classes') ? <hr style={line_class} /> : <div/>}</Nav.Link>
-                            <Nav.Link style={nav_bar} onClick={() => {this.setSelected('home'); scrollToRef(this.homeRef); }} >sobre nós{this.isSelected('home') ? <hr style={line_class} /> : <div/>} </Nav.Link>
+                            <Nav.Link style={nav_bar_voltar} href="/"> {translate("nav.back")} </Nav.Link>
+                            <Nav.Link style={nav_bar}>
+                                <Dropdown>
+                                    <Dropdown.Toggle id="dropdown-basic">
+                                        { getLanguageName() }
+                                    </Dropdown.Toggle>
+
+                                    <Dropdown.Menu>
+                                        <Dropdown.Item onClick={this.handleSetLanguage} value="pt">PT</Dropdown.Item>
+                                        <Dropdown.Item onClick={this.handleSetLanguage} value="en">EN</Dropdown.Item>
+                                        <Dropdown.Item onClick={this.handleSetLanguage} value="es">ES</Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
+                            </Nav.Link>
+                            <Nav.Link style={nav_bar} onClick={() => {this.setSelected('simulation'); scrollToRef(this.simulationRef); }}> {translate("nav.simulation")} {this.isSelected('simulation') ? <hr style={line_class} /> : <div/>}</Nav.Link>
+                            <Nav.Link style={nav_bar} onClick={() => {this.setSelected('classes'); scrollToRef(this.classesRef);}}> {translate("nav.fleet")} {this.isSelected('classes') ? <hr style={line_class} /> : <div/>}</Nav.Link>
+                            <Nav.Link style={nav_bar} onClick={() => {this.setSelected('home'); scrollToRef(this.homeRef);}}> {translate("nav.aboutus")} {this.isSelected('home') ? <hr style={line_class} /> : <div/>} </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
@@ -115,4 +139,4 @@ class RentaCarApp extends Component{
     }
 }
 
-export default RentaCarApp;
+export default RentACarApp;
