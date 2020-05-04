@@ -9,7 +9,7 @@ import { format } from 'date-fns'
 import axios from 'axios';
 import { Rabbit as Button } from 'react-button-loaders'
 import {translate} from "../../../Languages/Language_Handler";
-
+import './Simulation.css';
 
 class Simulation extends Component {
     constructor(props) {
@@ -149,98 +149,28 @@ class Simulation extends Component {
     }
 
     render() {
-        const menu_simulation={
-            paddingLeft: getPadding(),
-            paddingRight: getPadding()
-        };
 
-        const subTitle_simulation= {
-            fontFamily: 'Text_Bold',
-            fontVariant: "small-caps",
-            fontSize: "35px",
-            letterSpacing: "1px",
-            marginTop: getSubMenuTop(),
-            marginBottom: "20px"
-        };
-
-        const form_simulation={
-            boxSizing: "border-box"
-        };
-
-        const formLegend_simulation={
-            fontFamily: 'Text_Bold',
-            fontVariant: "small-caps",
-            fontSize: "13px",
-            letterSpacing: "1px",
-        };
-
-        const ratio_simulation={
-            display:"inline-block",
-            width:"100%",
-            padding:0,
-            margin:0,
-            fontSize: "23px",
-            paddingBottom:"20px"
-        };
-
-        const simulation_right={
-            padding:0,
-            float:"right",
-            width:"50%"
-        };
-
-        const simulation_left={
-            padding:0,
-            float:"left",
-            width:"50%",
-        };
-
-
-        const dateBet_simulation={
-            marginTop: 0,
-            width: "10%",
-            fontSize: "36px",
-            display: "inline-block",
-            textAlign:"center",
-            fontFamily:"Text_Bold",
-        };
-
-        const submitBtn_simulation={
-            marginTop: getSubMenuTop(),
-            marginBottom: getMenuTop(),
-            borderRadius: "0",
-            fontSize: "23px",
-            boxShadow: "none",
-        };
-
-        const infoObri_simulation={
-            fontFamily: 'Text_Bold',
-            fontVariant: "small-caps",
-            fontSize: "13px",
-            letterSpacing: "1px",
-        };
 
         return (
             <div>
                 <Title name={translate("simulation.title")}/>
-                <Form style={menu_simulation} onSubmit={this.handleSubmit}>
-                    <h3 style={subTitle_simulation}> {translate("simulation.title2")} </h3>
+                <Form className="menu_simulation" onSubmit={this.handleSubmit}>
+                    <h3 className="subTitle_simulation"> {translate("simulation.title2")} </h3>
                     <Form.Group controlId="formBasicText">
-                        <Form.Control style={form_simulation} size="lg" type="text" onChange={this.handleNameChange} />
-                        <Form.Text style={formLegend_simulation} className="text-muted">
+                        <Form.Control className="form_simulation" size="lg" type="text" onChange={this.handleNameChange} />
+                        <Form.Text className="formLegend_simulation">
                             {translate("simulation.name")}
                         </Form.Text>
                     </Form.Group>
                     <Form.Group controlId="formBasicEmail">
-                        <Form.Control style={form_simulation} size="lg" type="email" onChange={this.handleEmailChange} />
-                        <Form.Text style={formLegend_simulation} className="text-muted">
+                        <Form.Control className="form_simulation" size="lg" type="email" onChange={this.handleEmailChange} />
+                        <Form.Text className="formLegend_simulation">
                             {translate("simulation.email")}
                         </Form.Text>
                     </Form.Group>
-
-                    <h3 style={subTitle_simulation}> {translate("simulation.title3")} </h3>
-                    <Form.Group onChange={this.handleCarTypeChange} style={ratio_simulation}>
-                        <Col sm={10} style={simulation_left}>
+                    <h3 className="subTitle_simulation"> {translate("simulation.title3")} </h3>
+                    <Form.Group onChange={this.handleCarTypeChange} className="ratio_simulation">
+                        <Col sm={10} className="simulation_left">
                             <Form.Check
                                 type="checkbox"
                                 label={translate("simulation.type1")}
@@ -263,7 +193,7 @@ class Simulation extends Component {
                                 value="3"
                             />
                         </Col>
-                        <Col sm={10} style={simulation_right}>
+                        <Col sm={10} className="simulation_right">
                             <Form.Check
                                 type="checkbox"
                                 label={translate("simulation.type4")}
@@ -281,7 +211,7 @@ class Simulation extends Component {
                         </Col>
                     </Form.Group>
 
-                    <h3 style={subTitle_simulation}> {translate("simulation.title4")} </h3>
+                    <h3 className="subTitle_simulation"> {translate("simulation.title4")} </h3>
 
                     <div >
                         <DatePicker
@@ -290,7 +220,7 @@ class Simulation extends Component {
                             onChange={this.handleStartDateChange}
                             placeholderText="DD/MM/YYYY"
                         />
-                        <p style={dateBet_simulation}>—</p>
+                        <p className="dateBet_simulation">—</p>
                         <DatePicker
                             selected={this.state.end_date}
                             dateFormat="dd/MM/yyyy"
@@ -298,15 +228,15 @@ class Simulation extends Component {
                             placeholderText="DD/MM/YYYY"
                         />
                     </div>
-                    <h3 style={subTitle_simulation}> {translate("simulation.title5")} </h3>
+                    <h3 className="subTitle_simulation"> {translate("simulation.title5")} </h3>
 
                     <Form.Group>
                         <Form.Control as="textarea" rows="4" onChange={this.handleMessageChange} />
                     </Form.Group>
 
-                    <p style={infoObri_simulation}>{translate("simulation.required")}</p>
+                    <p className="infoObri_simulation">{translate("simulation.required")}</p>
 
-                    <Button style={submitBtn_simulation} type="submit" state={this.state.sendState}>
+                    <Button className="submitBtn_simulation" type="submit" state={this.state.sendState}>
                         {translate("simulation.submit")}
                     </Button>
                     <Alert variant={this.state.color} show={this.state.show}>

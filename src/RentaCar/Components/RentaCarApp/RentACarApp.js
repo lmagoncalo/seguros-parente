@@ -5,11 +5,8 @@ import Classes from "../Classes/Classes";
 import Simulation from "../Simulation/Simulation";
 import Footer from "../Footer/Footer";
 import {Nav, Navbar} from "react-bootstrap";
-import {getTextColor,getPrimaryColorFinal} from "../../../Colors";
-import {getPadding} from "../../Utils";
 import {getLanguage, getLanguageName, setLanguage, translate} from "../../../Languages/Language_Handler";
 import Dropdown from "react-bootstrap/Dropdown";
-
 
 class RentACarApp extends Component{
     constructor(props) {
@@ -50,61 +47,14 @@ class RentACarApp extends Component{
     render() {
         const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop - (this.state.height / 2));
 
-        const line_class={
-            margin: "auto",
-            marginTop: "6px",
-            border: "1.2px solid " + getPrimaryColorFinal()
-        };
-
-        const nav_bar={
-            fontVariant: "small-caps",
-            color: getTextColor(),
-            fontFamily: "Text_Bold",
-            fontSize: "18px",
-            letterSpacing: "1.5px",
-            marginLeft:"6px",
-            float:'right'
-        };
-
-        const nav_bar_voltar={
-            fontVariant: "small-caps",
-            color: getTextColor(),
-            fontFamily: "Text_Bold",
-            fontSize: "18px",
-            letterSpacing: "1.5px",
-            float:"left",
-        };
-
-        const divMenu_app = {
-            backgroundImage: "linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0.6),rgba(255,255,255,0) )",
-
-            backgroundColor:'white',
-            borderWidth:"0px",
-            margin:"0",
-            width:"100%",
-            padding:"0",
-            paddingBottom:"20px"
-
-        };
-
-        const menu_app = {
-            width:'100%',
-            paddingLeft:getPadding(),
-            paddingRight:getPadding(),
-            margin:"0",
-            fontSize: "15px",
-            marginTop: "20px",
-            float:'right',
-        };
-
         return (
             <div>
-                <Navbar collapseOnSelect expand="lg" sticky="top"  style={divMenu_app}>
+                <Navbar collapseOnSelect expand="lg" sticky="top"  className="divMenu_app">
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{borderWidth: "0px"}} />
                     <Navbar.Collapse id="responsive-navbar-nav" >
-                        <Nav style={menu_app}>
-                            <Nav.Link style={nav_bar_voltar} href="/"> {translate("nav.back")} </Nav.Link>
-                            <Nav.Link style={nav_bar}>
+                        <Nav className="menu_app">
+                            <Nav.Link className="nav_bar_voltar" href="/"> {translate("nav.back")} </Nav.Link>
+                            <Nav.Link className="nav_bar">
                                 <Dropdown>
                                     <Dropdown.Toggle id="dropdown-basic">
                                         { getLanguageName() }
@@ -117,9 +67,9 @@ class RentACarApp extends Component{
                                     </Dropdown.Menu>
                                 </Dropdown>
                             </Nav.Link>
-                            <Nav.Link style={nav_bar} onClick={() => {this.setSelected('simulation'); scrollToRef(this.simulationRef); }}> {translate("nav.simulation")} {this.isSelected('simulation') ? <hr style={line_class} /> : <div/>}</Nav.Link>
-                            <Nav.Link style={nav_bar} onClick={() => {this.setSelected('classes'); scrollToRef(this.classesRef);}}> {translate("nav.fleet")} {this.isSelected('classes') ? <hr style={line_class} /> : <div/>}</Nav.Link>
-                            <Nav.Link style={nav_bar} onClick={() => {this.setSelected('home'); scrollToRef(this.homeRef);}}> {translate("nav.aboutus")} {this.isSelected('home') ? <hr style={line_class} /> : <div/>} </Nav.Link>
+                            <Nav.Link className="nav_bar" onClick={() => {this.setSelected('simulation'); scrollToRef(this.simulationRef); }}> {translate("nav.simulation")} {this.isSelected('simulation') ? <hr className="line_class" /> : <div/>}</Nav.Link>
+                            <Nav.Link className="nav_bar" onClick={() => {this.setSelected('classes'); scrollToRef(this.classesRef);}}> {translate("nav.fleet")} {this.isSelected('classes') ? <hr className="line_class" /> : <div/>}</Nav.Link>
+                            <Nav.Link className="nav_bar" onClick={() => {this.setSelected('home'); scrollToRef(this.homeRef);}}> {translate("nav.aboutus")} {this.isSelected('home') ? <hr className="line_class" /> : <div/>} </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>

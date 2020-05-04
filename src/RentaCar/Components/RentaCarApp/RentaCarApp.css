@@ -1,158 +1,64 @@
-
-.Nav.Link{
-    /*font-variant: small-caps;*/
-}
-
-
 body {
     font-family: 'Text_Medium',serif;
     font-size: 20px;
 }
 
-.list-group-item{
-    padding:0;
-}
-
-/*FORM SIMULATION*/
-.form-control-lg {
-    font-size: 36px;
-    font-family: 'Display_Bold_Italic', serif;
-}
-.form-control {
-    /* color:rgb(255,65,99);*/
-    color:rgb(89,127,251);
-    border-radius: 0;
-}
-
-input#formBasicText, input#formBasicEmail {
-    border: 0;
-    outline: 0;
-    border-bottom: 3px solid black;
-    padding:0;
-    line-height: 1px;
-    height: 60px;
-}
-input#formBasicText:focus, input#formBasicEmail:focus{
-    border:0;
-    outline:0;
-    /* color:rgb(255,65,99);*/
-    color:rgb(89,127,251);
-    box-shadow:none;
-    /*border-bottom: 3px solid rgb(255,65,99);*/
-    border-bottom: 3px solid rgb(89,127,251);
-}
-
-.text-muted {
-    color: black !important;
-}
-
-input[type=checkbox] {
-    margin-top: 10px;
-    background: white;
-}
-
-.react-datepicker-wrapper {
-    width: 45%;
-}
-
-.react-datepicker__input-container {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-}
-
-
-input[type="text"] {
-    border: 0;
-    outline: 0;
-    border-bottom: 3px solid black;
-    padding: 0;
-    line-height: 1px;
-    height: 60px;
-    width: 100%;
-    font-size: 36px;
-    font-family: "Display_Bold_Italic", serif;
-    /*color: rgb(255,65,99);*/
-    color:rgb(89,127,251);
-}
-
-input[type="text"]:focus {
-    /*border-bottom: 3px solid rgb(255,65,99);*/
-    border-bottom: 3px solid rgb(89,127,251);
-
-}
-
-
-textarea.form-control {
-    border-radius: 0;
-    font-size: 23px;
-    outline:0;
-    box-shadow:none;
-
-    /*color: rgb(255,65,99);*/
-    color: rgb(89,127,251);
-    border: 3px solid black;
-
-}
-
-textarea.form-control:focus {
-    border-radius: 0;
-    font-size: 23px;
-    outline:0;
-    box-shadow:none;
-    /*color: rgb(255,65,99);*/
-    color: rgb(89,127,251);
-    /*border: 3px solid rgb(255,65,99);*/
-    border: 3px solid rgb(89,127,251);
-
-}
-
-
-
-button.btn.btn-none:hover{
-    border-radius: 0;
-    font-size: 23px;
-    outline:0;
-    box-shadow:none;
-    /*background: rgb(255,65,99) !important;*/
-    background: rgb(89,127,251) !important;
-
-    color: black;
-    border: 3px solid black;
-}
-button.btn.btn-none {
-    border-radius: 0;
-    font-size: 23px;
-    outline:0;
-    box-shadow:none;
-    color: black;
-    border: 3px solid black;
-}
-
-
 .navbar-nav {
     display: block;
 }
 
-
-
-button.react-button-loaders__btn.sc-EHOje.fuBhhA:hover,button.react-button-loaders__btn.sc-EHOje.fuBhhA {
-    border: 3px solid black;
-    color: black;
+.line_class{
+    margin: 6px auto auto;
+    border: 1px solid rgb(89,127,251);
 }
 
-.fuBhhA:focus,.fuBhhA {
-    box-shadow:none;
-    background: rgb(89,127,251) !important;
-    color: black;
-    font-family: 'Text_Bold',serif;
-    text-align: center;
-    letter-spacing: 1px;
+.nav_bar{
     font-variant: small-caps;
+    color: black;
+    font-family: Text_Bold, serif;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    margin-left:6px;
+    float:right;
 }
 
-.cxhzGU {
-    font-size: 18px !important;
-    width: 100%;
+.nav_bar_voltar{
+    font-variant: small-caps;
+    color:black;
+    font-family: Text_Bold, serif;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    float:left;
 }
+
+.divMenu_app{
+   /* background-image: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0.6),rgba(255,255,255,0) );*/
+    background-color:white;
+    border-width:0px;
+    margin:0;
+    width:100%;
+    padding: 0 0 20px;
+
+}
+
+.menu_app{
+    width:100%;
+    padding-left: 25%;/*getPadding();*/
+    padding-right: 25%;/*getPadding();*/
+    font-size: 15px;
+    margin: 20px 0 0;
+    float:right;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgb(0,0,0);
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: rgb(0,0,0);
+}
+
+
+
+
 

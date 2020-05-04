@@ -11,7 +11,6 @@ class SegurosApp extends Component{
                     <div id='home'>
                         <Home name="home"/>
                     </div>
-
                     <Footer/>
                 </div>
             );

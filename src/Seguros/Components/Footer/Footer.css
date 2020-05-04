@@ -1,0 +1,35 @@
+.divMenu_footer{
+    width:100%;
+    background: black;
+}
+
+.menu_footer{
+    text-align: center;
+    color:white;
+    padding: 50px 25%;/*getPadding();*/
+    font-family: Text_Bold, serif;
+    letter-spacing: 1px;
+    font-variant: small-caps;
+    font-size: 15px;
+}
+
+.parts_footer {
+    width: 35%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.partsImage_footer{
+    width:30%;
+    display:inline-block;
+    vertical-align: top;
+}
+
+.text_footer{
+    padding-top:10px;
+}
+
+.img_footer{
+    width:50%;
+    text-align: center;
+}

@@ -1,0 +1,21 @@
+.menu_home{
+    width: 100%;
+    padding: 60px 25%; /*getMenuTop();*//*getPadding();*/
+}
+
+.title_home{
+    font-family: 'Display_Medium', serif;
+    font-size: 60px; /*getTitleSize();*/
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.italic_home{
+    font-family: Display_Bold_Italic, serif;
+}
+
+.text_home{
+    font-family: Text_Regular, serif;
+    font-size: 27px;
+    line-height: 32px;
+}
